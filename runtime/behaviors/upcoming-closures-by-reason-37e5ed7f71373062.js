@@ -1,0 +1,18 @@
+export default async function install(app) {
+  const mount = app.getMount("upcoming-closures-by-reason");
+  const layer = app.layers[app.config.layerId];
+  if (!layer) throw new Error("Closure layer is unavailable.");
+  await layer.load();
+  const root = document.createElement("div");
+  Object.assign(root.style, { display:"grid", gap:"0.45rem", marginTop:"0.7rem", padding:"0.8rem", border:"1px solid var(--app-border-subtle)", borderRadius:"var(--app-radius)", background:"var(--app-surface-raised)", minWidth:"0" });
+  const note = document.createElement("div");
+  Object.assign(note.style,{color:"var(--app-text-muted)",fontSize:"0.85rem"});
+  note.textContent="Loading planned closure categories…";
+  const breakdown = document.createElement("div");
+  Object.assign(breakdown.style,{display:"grid",gap:"0.45rem"});
+  root.append(note,breakdown); mount.replaceChildren(root);
+  const colors=["var(--app-series-1)","var(--app-series-2)","var(--app-series-3)","var(--app-series-4)","var(--app-series-5)","var(--app-series-6)"];
+  let generation=0;
+  const refresh=async()=>{const current=++generation;note.textContent="Loading planned closure categories…";breakdown.replaceChildren();try{const today=new Date();today.setHours(0,0,0,0);const dateText=`${today.getFullYear()}-${String(today.getMonth()+1).padStart(2,"0")}-${String(today.getDate()).padStart(2,"0")}`;const query=layer.createQuery();query.where=`${app.config.startDateField} >= DATE '${dateText}'`;query.groupByFieldsForStatistics=[app.config.reasonField];query.outStatistics=[{statisticType:"count",onStatisticField:layer.objectIdField,outStatisticFieldName:"closure_count"}];query.orderByFields=["closure_count DESC"];query.returnGeometry=false;const {features}=await layer.queryFeatures(query);if(current!==generation)return;const categories=features.map(f=>({reason:String(f.attributes[app.config.reasonField]??"Unspecified").trim()||"Unspecified",count:Number(f.attributes.closure_count||0)}));const count=categories.reduce((sum,item)=>sum+item.count,0);if(!count){note.textContent="No planned closures.";return;}note.textContent="";const maximum=Math.max(...categories.map(item=>item.count),1);categories.forEach((item,index)=>{const row=document.createElement("div");Object.assign(row.style,{display:"grid",gridTemplateColumns:"minmax(0, 1fr) auto",gap:"0.5rem",alignItems:"center"});const left=document.createElement("div");left.style.minWidth="0";const name=document.createElement("div");name.textContent=item.reason;Object.assign(name.style,{fontSize:"0.85rem",fontWeight:"600",overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"});const track=document.createElement("div");Object.assign(track.style,{height:"0.35rem",marginTop:"0.25rem",borderRadius:"999px",background:"var(--app-border-subtle)"});const bar=document.createElement("div");Object.assign(bar.style,{height:"100%",width:`${Math.max(8,(item.count/maximum)*100)}%`,borderRadius:"inherit",background:colors[index%colors.length],transition:"width 180ms ease"});track.append(bar);left.append(name,track);const badge=document.createElement("calcite-chip");badge.setAttribute("label",`${item.reason}: ${item.count} closures`);badge.textContent=String(item.count);row.append(left,badge);breakdown.append(row);});}catch(error){if(current!==generation)return;note.textContent="Unable to summarize planned closures.";}};
+  await refresh(); const now=new Date(),nextDay=new Date(now);nextDay.setHours(24,0,5,0);const timer=setTimeout(()=>{void refresh();},Math.max(1000,nextDay.getTime()-now.getTime()));app.onCleanup(()=>{clearTimeout(timer);mount.replaceChildren();});
+}

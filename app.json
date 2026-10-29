@@ -15,40 +15,14 @@
     "preset": "analysis",
     "showHeader": true,
     "theme": {
-      "mode": "light",
-      "accent": "coral"
+      "mode": "dark",
+      "accent": "default"
     },
     "layout": {
-      "header": {
-        "hidden": false,
-        "collapsed": false,
-        "blocks": [
-          {
-            "type": "stat",
-            "id": "current-closure-count",
-            "title": "Current road closures",
-            "icon": "number",
-            "source": {
-              "layerId": "18a3d6d7cce-layer-4",
-              "where": "activeincid = 'Yes'",
-              "scope": "layer"
-            },
-            "statistic": "count",
-            "description": "Active closure records across the community.",
-            "autoPoll": true
-          },
-          {
-            "type": "customMount",
-            "id": "upcoming-closures-by-reason",
-            "title": "Active closures by reason",
-            "icon": "calendar"
-          }
-        ]
-      },
       "left": {
         "hidden": false,
         "width": "420px",
-        "title": "Road Closures",
+        "title": " ",
         "collapsed": false,
         "blocks": [
           {
@@ -62,11 +36,25 @@
             "id": "closure-details",
             "title": "Selected closure",
             "icon": "information"
+          }
+        ]
+      },
+      "right": {
+        "hidden": false,
+        "width": "420px",
+        "title": " ",
+        "collapsed": false,
+        "blocks": [
+          {
+            "type": "customMount",
+            "id": "upcoming-closures-by-reason",
+            "title": "Planned closures",
+            "icon": "calendar"
           },
           {
             "type": "customMount",
             "id": "closure-editor",
-            "title": "Edit closures",
+            "title": "New closure",
             "icon": "layers"
           }
         ]
@@ -113,8 +101,8 @@
       {
         "id": "closure-details",
         "label": "Show selected closure details",
-        "bundlePath": "./runtime/behaviors/closure-details-2ec40cf4d908e991.js",
-        "sourceSha256": "2ec40cf4d908e9918b3b5201c292816bba011ef0444802c7c88e8ae03142c42c",
+        "bundlePath": "./runtime/behaviors/closure-details-89ac4961c5126d29.js",
+        "sourceSha256": "89ac4961c5126d29199bee707c68ec4526b66055c8866a3a8b61830d5ad02cf0",
         "modulePaths": [],
         "config": {
           "layerId": "18a3d6d7cce-layer-4"
@@ -133,34 +121,32 @@
             "actionId": "show-closure-details"
           }
         ],
-        "installedAt": "2026-10-29T15:23:44.254Z"
+        "installedAt": "2026-10-29T20:17:18.908Z"
       },
       {
         "id": "closure-search-filter",
-        "label": "Search and filter road closures",
-        "bundlePath": "./runtime/behaviors/closure-search-filter-137db4db0e5ba2f4.js",
-        "sourceSha256": "137db4db0e5ba2f4455ff1a90f7f01e822e39fc25acb1674c6491fcffacc24e2",
+        "label": "Search road closures by name",
+        "bundlePath": "./runtime/behaviors/closure-search-filter-7b2ee82dc018e59b.js",
+        "sourceSha256": "7b2ee82dc018e59b3388c2e73a6838439b5720374c4f02c7f49f4c7ad4fb655f",
         "modulePaths": [
           "esri/layers/support/FeatureFilter"
         ],
         "config": {
           "layerId": "18a3d6d7cce-layer-4",
-          "roadField": "street",
-          "statusField": "activeincid",
-          "closureIdField": "closureid"
+          "roadField": "street"
         },
         "mounts": [
           "closure-search-filter"
         ],
         "ownedLayerIds": [],
         "interactions": [],
-        "installedAt": "2026-10-29T15:25:09.739Z"
+        "installedAt": "2026-10-29T20:17:28.026Z"
       },
       {
         "id": "upcoming-closures-by-reason",
-        "label": "Summarize current and future closures by reason",
-        "bundlePath": "./runtime/behaviors/upcoming-closures-by-reason-73798039a356b6e4.js",
-        "sourceSha256": "73798039a356b6e4bb7e45c997a41a095dbdc19418fca883994078bb4b723166",
+        "label": "Summarize planned closures by reason",
+        "bundlePath": "./runtime/behaviors/upcoming-closures-by-reason-37e5ed7f71373062.js",
+        "sourceSha256": "37e5ed7f7137306263ceb75481a5437cce5dfa7799ef4eac0d903c6cef20965d",
         "modulePaths": [],
         "config": {
           "layerId": "18a3d6d7cce-layer-4",
@@ -172,13 +158,13 @@
         ],
         "ownedLayerIds": [],
         "interactions": [],
-        "installedAt": "2026-10-29T15:35:10.522Z"
+        "installedAt": "2026-10-29T20:23:16.793Z"
       },
       {
         "id": "closure-editor",
         "label": "Edit road closures",
-        "bundlePath": "./runtime/behaviors/closure-editor-ab1d93bc13248cdf.js",
-        "sourceSha256": "ab1d93bc13248cdfd67bfb1a191f62793b6be28557b5d985caf238c19d25be63",
+        "bundlePath": "./runtime/behaviors/closure-editor-f8c95c89d4a34360.js",
+        "sourceSha256": "f8c95c89d4a34360123af6dd9f32bd25a464e179dd8b521570624902ca85d118",
         "modulePaths": [
           "esri/widgets/Editor"
         ],
@@ -190,7 +176,7 @@
         ],
         "ownedLayerIds": [],
         "interactions": [],
-        "installedAt": "2026-10-29T15:37:01.995Z"
+        "installedAt": "2026-10-29T20:27:11.728Z"
       }
     ]
   },

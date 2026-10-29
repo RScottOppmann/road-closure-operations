@@ -16,6 +16,62 @@
         "featureReduction": null,
         "definitionExpression": null,
         "capabilities": "Query",
+        "fieldConfigurations": [
+          {
+            "name": "Carto",
+            "fieldFormat": {
+              "type": "number",
+              "useGrouping": "never"
+            }
+          },
+          {
+            "alias": "Name",
+            "name": "LABEL_LOCAL"
+          },
+          {
+            "alias": "Language",
+            "name": "LABEL_LOCAL_Lang"
+          },
+          {
+            "alias": "Hwy",
+            "name": "HWY1"
+          },
+          {
+            "alias": "Hwy_Type",
+            "name": "HWY1_TYPE",
+            "fieldFormat": {
+              "type": "number",
+              "useGrouping": "never"
+            }
+          },
+          {
+            "alias": "Hwy_Label",
+            "name": "HWY1_Label"
+          },
+          {
+            "alias": "Direction",
+            "name": "DirTravel"
+          },
+          {
+            "alias": "Country",
+            "name": "Admin0_Name"
+          },
+          {
+            "alias": "State",
+            "name": "Admin1_Name"
+          },
+          {
+            "name": "Viz",
+            "fieldFormat": {
+              "type": "number",
+              "useGrouping": "never"
+            }
+          },
+          {
+            "alias": "Data_Source",
+            "name": "DATASOURCENAME"
+          }
+        ],
         "drawingInfo": {
           "renderer": {
             "type": "simple",
@@ -59,7 +115,8 @@
       },
       "featureEffect": null,
       "capabilities": "Query",
-      "showLabels": false
+      "showLabels": false,
+      "blendMode": "normal"
     },
     {
       "id": "18a3d6d7ccd-layer-3",
@@ -76,6 +133,54 @@
         "maxScale": 0,
         "featureReduction": null,
         "definitionExpression": null,
+        "fieldConfigurations": [
+          {
+            "name": "starttime",
+            "fieldFormat": {
+              "type": "date-time",
+              "dateStyle": "long",
+              "hour12": "always",
+              "timeStyle": "short"
+            }
+          },
+          {
+            "name": "endtime",
+            "fieldFormat": {
+              "type": "date-time",
+              "dateStyle": "long",
+              "hour12": "always",
+              "timeStyle": "short"
+            }
+          },
+          {
+            "alias": "Detour URL",
+            "name": "url"
+          },
+          {
+            "name": "created_date",
+            "fieldFormat": {
+              "type": "date-time",
+              "dateStyle": "long",
+              "hour12": "always"
+            }
+          },
+          {
+            "name": "last_edited_date",
+            "fieldFormat": {
+              "type": "date-time",
+              "dateStyle": "long",
+              "hour12": "always"
+            }
+          },
+          {
+            "name": "Shape__Length",
+            "fieldFormat": {
+              "type": "number",
+              "minimumFractionDigits": 2,
+              "useGrouping": "always"
+            }
+          }
+        ],
         "drawingInfo": {
           "renderer": {
             "type": "simple",
@@ -291,6 +396,12 @@
                 "visible": true
               },
               {
+                "fieldFormat": {
+                  "type": "date-time",
+                  "dateStyle": "long",
+                  "hour12": "always",
+                  "timeStyle": "short"
+                },
                 "fieldName": "starttime",
                 "format": {
                   "dateFormat": "longMonthDayYearShortTime",
@@ -301,6 +412,12 @@
                 "visible": true
               },
               {
+                "fieldFormat": {
+                  "type": "date-time",
+                  "dateStyle": "long",
+                  "hour12": "always",
+                  "timeStyle": "short"
+                },
                 "fieldName": "endtime",
                 "format": {
                   "dateFormat": "longMonthDayYearShortTime",
@@ -977,54 +1094,15 @@
       "effect": [
         {
           "scale": 9027.97741,
-          "value": [
-            {
-              "type": "drop-shadow",
-              "xoffset": 0.375,
-              "yoffset": 0.375,
-              "blurRadius": 0.75,
-              "color": [
-                0,
-                0,
-                0,
-                255
-              ]
-            }
-          ]
+          "value": "drop-shadow(0.375pt 0.375pt 0.75pt rgba(0, 0, 0, 1))"
         },
         {
           "scale": 2256.9943525,
-          "value": [
-            {
-              "type": "drop-shadow",
-              "xoffset": 0.75,
-              "yoffset": 0.75,
-              "blurRadius": 1.5,
-              "color": [
-                0,
-                0,
-                0,
-                255
-              ]
-            }
-          ]
+          "value": "drop-shadow(0.75pt 0.75pt 1.5pt rgba(0, 0, 0, 1))"
         },
         {
           "scale": 564.248588125,
-          "value": [
-            {
-              "type": "drop-shadow",
-              "xoffset": 1.5,
-              "yoffset": 1.5,
-              "blurRadius": 3,
-              "color": [
-                0,
-                0,
-                0,
-                255
-              ]
-            }
-          ]
+          "value": "drop-shadow(1.5pt 1.5pt 3pt rgba(0, 0, 0, 1))"
         }
       ],
       "featureEffect": null,
@@ -1320,106 +1398,106 @@
       "popupInfo": {
         "popupElements": [
           {
+            "type": "text",
+            "text": "<h3>{expression/activeStatus}</h3><p><b>Operational impact</b></p>"
+          },
+          {
             "type": "fields",
-            "description": "",
             "fieldInfos": [
               {
                 "fieldName": "reason",
-                "format": {
-                  "digitSeparator": true,
-                  "places": 0
-                },
                 "isEditable": true,
                 "label": "Reason",
                 "visible": true
               },
               {
                 "fieldName": "direction",
-                "format": {
-                  "digitSeparator": true,
-                  "places": 0
-                },
                 "isEditable": true,
                 "label": "Direction",
                 "visible": true
               },
               {
-                "fieldName": "description",
-                "isEditable": true,
-                "label": "Description",
-                "visible": true
-              },
-              {
                 "fieldName": "laneimpact",
-                "format": {
-                  "digitSeparator": true,
-                  "places": 0
-                },
                 "isEditable": true,
-                "label": "Lane Impact",
-                "visible": true
-              },
-              {
-                "fieldName": "starttime",
-                "format": {
-                  "dateFormat": "longMonthDayYearShortTime",
-                  "digitSeparator": false
-                },
-                "isEditable": true,
-                "label": "Start Time",
-                "visible": true
-              },
-              {
-                "fieldName": "endtime",
-                "format": {
-                  "dateFormat": "longMonthDayYearShortTime",
-                  "digitSeparator": false
-                },
-                "isEditable": true,
-                "label": "End Time",
-                "visible": true
-              }
-            ],
-            "title": ""
-          },
-          {
-            "type": "fields",
-            "description": "",
-            "fieldInfos": [
-              {
-                "fieldName": "closureid",
-                "isEditable": true,
-                "label": "Closure ID",
-                "visible": true
-              },
-              {
-                "fieldName": "altroute",
-                "isEditable": true,
-                "label": "Alternate Route",
+                "label": "Lane impact",
                 "visible": true
               },
               {
                 "fieldName": "accessallowed",
-                "format": {
-                  "digitSeparator": true,
-                  "places": 0
-                },
                 "isEditable": true,
-                "label": "Access Allowed",
-                "visible": true
-              },
-              {
-                "fieldName": "url",
-                "isEditable": true,
-                "label": "Closure URL",
+                "label": "Access",
                 "visible": true
               }
-            ],
-            "title": "Additional Details"
+            ]
+          },
+          {
+            "type": "text",
+            "text": "<p><b>Schedule</b></p>"
           },
           {
             "type": "fields",
-            "description": "",
+            "fieldInfos": [
+              {
+                "fieldFormat": {
+                  "type": "date-time",
+                  "dateStyle": "short",
+                  "hour12": "always",
+                  "timeStyle": "short"
+                },
+                "fieldName": "starttime",
+                "format": {
+                  "dateFormat": "shortDateShortTime",
+                  "digitSeparator": false
+                },
+                "isEditable": true,
+                "label": "Starts",
+                "visible": true
+              },
+              {
+                "fieldFormat": {
+                  "type": "date-time",
+                  "dateStyle": "short",
+                  "hour12": "always",
+                  "timeStyle": "short"
+                },
+                "fieldName": "endtime",
+                "format": {
+                  "dateFormat": "shortDateShortTime",
+                  "digitSeparator": false
+                },
+                "isEditable": true,
+                "label": "Ends",
+                "visible": true
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": "<p><b>Field notes</b></p>"
+          },
+          {
+            "type": "fields",
+            "fieldInfos": [
+              {
+                "fieldName": "altroute",
+                "isEditable": true,
+                "label": "Alternate route",
+                "visible": true
+              },
+              {
+                "fieldName": "description",
+                "isEditable": true,
+                "label": "Details",
+                "visible": true
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": "<p><b>Contact</b></p>"
+          },
+          {
+            "type": "fields",
             "fieldInfos": [
               {
                 "fieldName": "pocname",
@@ -1439,229 +1517,18 @@
                 "label": "Phone",
                 "visible": true
               }
-            ],
-            "title": "Contact Information"
-          },
-          {
-            "type": "relationship",
-            "description": "",
-            "displayCount": 5,
-            "displayType": "list",
-            "orderByFields": [
-              {
-                "field": "starttime",
-                "order": "asc"
-              }
-            ],
-            "relationshipId": 0,
-            "title": "Blocks"
-          },
-          {
-            "type": "relationship",
-            "description": "",
-            "displayCount": 1,
-            "displayType": "list",
-            "orderByFields": [
-              {
-                "field": "starttime",
-                "order": "asc"
-              }
-            ],
-            "relationshipId": 1,
-            "title": "Detours"
+            ]
           }
         ],
-        "relatedRecordsInfo": {
-          "showRelatedRecords": true,
-          "orderByFields": [
-            {
-              "field": "relationships/0/starttime",
-              "order": "asc"
-            },
-            {
-              "field": "relationships/1/starttime",
-              "order": "asc"
-            }
-          ]
-        },
-        "fieldInfos": [
+        "description": "<h3>{expression/activeStatus}</h3><p><b>Operational impact</b></p>",
+        "expressionInfos": [
           {
-            "fieldName": "OBJECTID",
-            "isEditable": false,
-            "label": "OBJECTID",
-            "visible": false
-          },
-          {
-            "fieldName": "closureid",
-            "isEditable": true,
-            "label": "Closure ID",
-            "visible": true
-          },
-          {
-            "fieldName": "street",
-            "isEditable": true,
-            "label": "Street Name",
-            "visible": false
-          },
-          {
-            "fieldName": "direction",
-            "format": {
-              "digitSeparator": true,
-              "places": 0
-            },
-            "isEditable": true,
-            "label": "Direction",
-            "visible": true
-          },
-          {
-            "fieldName": "reason",
-            "format": {
-              "digitSeparator": true,
-              "places": 0
-            },
-            "isEditable": true,
-            "label": "Reason",
-            "visible": true
-          },
-          {
-            "fieldName": "laneimpact",
-            "format": {
-              "digitSeparator": true,
-              "places": 0
-            },
-            "isEditable": true,
-            "label": "Lane Impact",
-            "visible": true
-          },
-          {
-            "fieldName": "accessallowed",
-            "format": {
-              "digitSeparator": true,
-              "places": 0
-            },
-            "isEditable": true,
-            "label": "Access Allowed",
-            "visible": true
-          },
-          {
-            "fieldName": "description",
-            "isEditable": true,
-            "label": "Description",
-            "visible": true
-          },
-          {
-            "fieldName": "starttime",
-            "format": {
-              "dateFormat": "longMonthDayYearShortTime",
-              "digitSeparator": false
-            },
-            "isEditable": true,
-            "label": "Start Time",
-            "visible": true
-          },
-          {
-            "fieldName": "endtime",
-            "format": {
-              "dateFormat": "longMonthDayYearShortTime",
-              "digitSeparator": false
-            },
-            "isEditable": true,
-            "label": "End Time",
-            "visible": true
-          },
-          {
-            "fieldName": "altroute",
-            "isEditable": true,
-            "label": "Alternate Route",
-            "visible": true
-          },
-          {
-            "fieldName": "pocname",
-            "isEditable": true,
-            "label": "Name",
-            "visible": true
-          },
-          {
-            "fieldName": "pocemail",
-            "isEditable": true,
-            "label": "Email",
-            "visible": true
-          },
-          {
-            "fieldName": "pocphone",
-            "isEditable": true,
-            "label": "Phone",
-            "visible": true
-          },
-          {
-            "fieldName": "url",
-            "isEditable": true,
-            "label": "Closure URL",
-            "visible": true
-          },
-          {
-            "fieldName": "activeincid",
-            "isEditable": true,
-            "label": "Active Incident",
-            "visible": false
-          },
-          {
-            "fieldName": "streetoverride",
-            "isEditable": true,
-            "label": "Street Override",
-            "visible": false
-          },
-          {
-            "fieldName": "globalid",
-            "isEditable": false,
-            "label": "GlobalID",
-            "visible": false
-          },
-          {
-            "fieldName": "created_user",
-            "isEditable": false,
-            "label": "Created By",
-            "visible": false
-          },
-          {
-            "fieldName": "created_date",
-            "format": {
-              "dateFormat": "longMonthDayYear",
-              "digitSeparator": false
-            },
-            "isEditable": false,
-            "label": "Created On",
-            "visible": false
-          },
-          {
-            "fieldName": "last_edited_user",
-            "isEditable": false,
-            "label": "Last Edited By",
-            "visible": false
-          },
-          {
-            "fieldName": "last_edited_date",
-            "format": {
-              "dateFormat": "longMonthDayYear",
-              "digitSeparator": false
-            },
-            "isEditable": false,
-            "label": "Last Edited On",
-            "visible": false
-          },
-          {
-            "fieldName": "Shape__Length",
-            "format": {
-              "digitSeparator": true,
-              "places": 2
-            },
-            "isEditable": false,
-            "label": "Shape__Length",
-            "visible": false
+            "name": "activeStatus",
+            "title": "Status",
+            "expression": "IIf($feature.activeincid == 'Yes', 'Active', '')"
           }
         ],
-        "showLastEditInfo": false,
-        "title": "Closure: {street}"
+        "title": "{street}"
       }
     },
     {
@@ -1678,6 +1545,46 @@
         "minScale": 0,
         "maxScale": 0,
         "definitionExpression": null,
+        "fieldConfigurations": [
+          {
+            "name": "starttime",
+            "fieldFormat": {
+              "type": "date-time",
+              "dateStyle": "long",
+              "hour12": "always",
+              "timeStyle": "short"
+            }
+          },
+          {
+            "name": "endtime",
+            "fieldFormat": {
+              "type": "date-time",
+              "dateStyle": "long",
+              "hour12": "always",
+              "timeStyle": "short"
+            }
+          },
+          {
+            "alias": "Block URL",
+            "name": "url"
+          },
+          {
+            "name": "created_date",
+            "fieldFormat": {
+              "type": "date-time",
+              "dateStyle": "long",
+              "hour12": "always"
+            }
+          },
+          {
+            "name": "last_edited_date",
+            "fieldFormat": {
+              "type": "date-time",
+              "dateStyle": "long",
+              "hour12": "always"
+            }
+          }
+        ],
         "drawingInfo": {
           "renderer": {
             "authoringInfo": {},
@@ -2021,54 +1928,15 @@
       "effect": [
         {
           "scale": 9027.97741,
-          "value": [
-            {
-              "type": "drop-shadow",
-              "xoffset": 0.75,
-              "yoffset": 0.75,
-              "blurRadius": 1.125,
-              "color": [
-                0,
-                0,
-                0,
-                255
-              ]
-            }
-          ]
+          "value": "drop-shadow(0.75pt 0.75pt 1.125pt rgba(0, 0, 0, 1))"
         },
         {
           "scale": 2256.9943525,
-          "value": [
-            {
-              "type": "drop-shadow",
-              "xoffset": 1.5,
-              "yoffset": 1.5,
-              "blurRadius": 2.25,
-              "color": [
-                0,
-                0,
-                0,
-                255
-              ]
-            }
-          ]
+          "value": "drop-shadow(1.5pt 1.5pt 2.25pt rgba(0, 0, 0, 1))"
         },
         {
           "scale": 564.248588125,
-          "value": [
-            {
-              "type": "drop-shadow",
-              "xoffset": 3,
-              "yoffset": 3,
-              "blurRadius": 4.5,
-              "color": [
-                0,
-                0,
-                0,
-                255
-              ]
-            }
-          ]
+          "value": "drop-shadow(3pt 3pt 4.5pt rgba(0, 0, 0, 1))"
         }
       ],
       "featureEffect": null,
@@ -2264,6 +2132,11 @@
             "description": "",
             "fieldInfos": [
               {
+                "fieldFormat": {
+                  "type": "number",
+                  "maximumFractionDigits": 0,
+                  "useGrouping": "always"
+                },
                 "fieldName": "reason",
                 "format": {
                   "digitSeparator": true,
@@ -2274,6 +2147,11 @@
                 "visible": true
               },
               {
+                "fieldFormat": {
+                  "type": "number",
+                  "maximumFractionDigits": 0,
+                  "useGrouping": "always"
+                },
                 "fieldName": "direction",
                 "format": {
                   "digitSeparator": true,
@@ -2290,6 +2168,12 @@
                 "visible": true
               },
               {
+                "fieldFormat": {
+                  "type": "date-time",
+                  "dateStyle": "long",
+                  "hour12": "always",
+                  "timeStyle": "short"
+                },
                 "fieldName": "starttime",
                 "format": {
                   "dateFormat": "longMonthDayYearShortTime",
@@ -2300,6 +2184,12 @@
                 "visible": true
               },
               {
+                "fieldFormat": {
+                  "type": "date-time",
+                  "dateStyle": "long",
+                  "hour12": "always",
+                  "timeStyle": "short"
+                },
                 "fieldName": "endtime",
                 "format": {
                   "dateFormat": "longMonthDayYearShortTime",
@@ -2323,6 +2213,11 @@
                 "visible": true
               },
               {
+                "fieldFormat": {
+                  "type": "number",
+                  "maximumFractionDigits": 0,
+                  "useGrouping": "always"
+                },
                 "fieldName": "accessallowed",
                 "format": {
                   "digitSeparator": true,
@@ -2530,11 +2425,12 @@
     ],
     "title": "Light Gray Canvas"
   },
-  "authoringApp": "ArcGISMapViewer",
-  "authoringAppVersion": "2023.2",
+  "authoringApp": "ArcGIS API for JavaScript",
+  "authoringAppVersion": "5.1",
   "spatialReference": {
     "latestWkid": 3857,
     "wkid": 102100
   },
-  "version": "2.28"
+  "timeZone": "system",
+  "version": "2.37"
 }
