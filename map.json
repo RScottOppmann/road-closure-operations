@@ -1,0 +1,2540 @@
+{
+  "operationalLayers": [
+    {
+      "id": "18a4cbaa1cc-layer-16",
+      "showLegend": false,
+      "opacity": 0,
+      "disablePopup": true,
+      "title": "Roads",
+      "url": "https://services9.arcgis.com/RHVPKKiFTONKtxq3/arcgis/rest/services/Esri_Basemap_Roads_NA/FeatureServer/0",
+      "visibility": true,
+      "itemId": "9df2ddfa696a4271a749aac54d32814d",
+      "layerType": "ArcGISFeatureLayer",
+      "refreshInterval": 0,
+      "layerDefinition": {
+        "minScale": 40000,
+        "featureReduction": null,
+        "definitionExpression": null,
+        "capabilities": "Query",
+        "drawingInfo": {
+          "renderer": {
+            "type": "simple",
+            "visualVariables": [
+              {
+                "type": "sizeInfo",
+                "valueExpression": "$view.scale",
+                "stops": [
+                  {
+                    "size": 1.5,
+                    "value": 282.124294
+                  },
+                  {
+                    "size": 0.75,
+                    "value": 2256.9943525
+                  },
+                  {
+                    "size": 0.5625,
+                    "value": 18055.9548215
+                  },
+                  {
+                    "size": 0.375,
+                    "value": 144447.638572
+                  }
+                ]
+              }
+            ],
+            "symbol": {
+              "type": "esriSLS",
+              "color": [
+                77,
+                77,
+                77,
+                255
+              ],
+              "width": 1.5,
+              "style": "esriSLSSolid"
+            }
+          }
+        }
+      },
+      "featureEffect": null,
+      "capabilities": "Query",
+      "showLabels": false
+    },
+    {
+      "id": "18a3d6d7ccd-layer-3",
+      "showLegend": true,
+      "opacity": 1,
+      "disablePopup": false,
+      "title": "Detours",
+      "url": "https://services7.arcgis.com/piPfTFmrV9d1DIvN/arcgis/rest/services/RoadClosures_efde02c3f4364572b7fb1e6bd373a90e/FeatureServer/2",
+      "itemId": "37fc621f5add4c79b86d259510d3106e",
+      "layerType": "ArcGISFeatureLayer",
+      "refreshInterval": 0,
+      "layerDefinition": {
+        "minScale": 0,
+        "maxScale": 0,
+        "featureReduction": null,
+        "definitionExpression": null,
+        "drawingInfo": {
+          "renderer": {
+            "type": "simple",
+            "visualVariables": [
+              {
+                "type": "sizeInfo",
+                "valueExpression": "$view.scale",
+                "stops": [
+                  {
+                    "size": 6,
+                    "value": 2500
+                  },
+                  {
+                    "size": 4.5,
+                    "value": 5000
+                  },
+                  {
+                    "size": 3,
+                    "value": 10000
+                  },
+                  {
+                    "size": 2,
+                    "value": 15000
+                  }
+                ]
+              }
+            ],
+            "symbol": {
+              "type": "CIMSymbolReference",
+              "symbol": {
+                "type": "CIMLineSymbol",
+                "effects": [
+                  {
+                    "type": "CIMGeometricEffectAddControlPoints",
+                    "angleTolerance": 120
+                  }
+                ],
+                "symbolLayers": [
+                  {
+                    "type": "CIMSolidStroke",
+                    "effects": [
+                      {
+                        "type": "CIMGeometricEffectDashes",
+                        "dashTemplate": [
+                          12,
+                          6
+                        ],
+                        "lineDashEnding": "HalfPattern",
+                        "controlPointEnding": "HalfPattern"
+                      }
+                    ],
+                    "enable": true,
+                    "capStyle": "Butt",
+                    "joinStyle": "Round",
+                    "lineStyle3D": "Strip",
+                    "miterLimit": 10,
+                    "width": 6,
+                    "color": [
+                      230,
+                      152,
+                      0,
+                      255
+                    ]
+                  },
+                  {
+                    "type": "CIMSolidStroke",
+                    "enable": true,
+                    "capStyle": "Butt",
+                    "joinStyle": "Round",
+                    "lineStyle3D": "Strip",
+                    "miterLimit": 10,
+                    "width": 6,
+                    "color": [
+                      255,
+                      255,
+                      255,
+                      255
+                    ]
+                  }
+                ]
+              }
+            }
+          }
+        }
+      },
+      "timeAnimation": true,
+      "blendMode": "normal",
+      "effect": null,
+      "featureEffect": null,
+      "formInfo": {
+        "formElements": [
+          {
+            "description": "Name of street closed (Required)",
+            "label": "Street Name",
+            "type": "field",
+            "editable": true,
+            "editableExpression": "expr/system/true",
+            "fieldName": "street",
+            "inputType": {
+              "type": "text-box",
+              "maxLength": 150,
+              "minLength": 0
+            },
+            "requiredExpression": "expr/system/true"
+          },
+          {
+            "description": "Description of detour (Optional)",
+            "label": "Description",
+            "type": "field",
+            "editable": true,
+            "editableExpression": "expr/system/true",
+            "fieldName": "description",
+            "inputType": {
+              "type": "text-area",
+              "maxLength": 4000,
+              "minLength": 0
+            }
+          },
+          {
+            "description": "Date and time detour begins (Required)",
+            "label": "Starts",
+            "type": "field",
+            "editable": true,
+            "editableExpression": "expr/system/true",
+            "fieldName": "starttime",
+            "inputType": {
+              "type": "datetime-picker",
+              "includeTime": true
+            },
+            "requiredExpression": "expr/system/true"
+          },
+          {
+            "description": "Date and time detour ends (Required)",
+            "label": "Ends",
+            "type": "field",
+            "editable": true,
+            "editableExpression": "expr/system/true",
+            "fieldName": "endtime",
+            "inputType": {
+              "type": "datetime-picker",
+              "includeTime": true
+            },
+            "requiredExpression": "expr/system/true"
+          },
+          {
+            "label": "Additional Details",
+            "type": "group",
+            "formElements": [
+              {
+                "description": "Locally assigned road detour identifier (Optional)",
+                "label": "Detour ID",
+                "type": "field",
+                "visibilityExpression": "expr/system/false",
+                "editable": false,
+                "fieldName": "detourid",
+                "inputType": {
+                  "type": "text-box",
+                  "maxLength": 50,
+                  "minLength": 0
+                },
+                "valueExpression": "expr/detour-id"
+              },
+              {
+                "description": "URL to additional details (Optional)",
+                "label": "URL",
+                "type": "field",
+                "editable": true,
+                "editableExpression": "expr/system/true",
+                "fieldName": "url",
+                "inputType": {
+                  "type": "text-box",
+                  "maxLength": 1000,
+                  "minLength": 0
+                }
+              }
+            ],
+            "initialState": "collapsed"
+          }
+        ],
+        "expressionInfos": [
+          {
+            "expression": "false",
+            "name": "expr/system/false",
+            "returnType": "boolean",
+            "title": "False"
+          },
+          {
+            "expression": "true",
+            "name": "expr/system/true",
+            "returnType": "boolean",
+            "title": "True"
+          },
+          {
+            "expression": "var layerIndex = '2'\nvar idField = 'detourid'\nvar idPrefix = 'dt-' \nvar digits = 6\n\n/*DO NOT CHANGE ANYTHING BELOW THIS LINE\n-------------------------------------------------------------------------*/\n\nfunction GenerateWildcards(digits, wildcard) {\n  var wildcards = ''\n  for (var i=0; i < digits; i++) {\n    wildcards += wildcard\n  }\n  return wildcards\n} \n\nfunction GetNextId(layerIndex, idField, idPrefix, padding, sqlFilter) {\n  // get the feature with the greatest assetid that matches the id pattern specified in the SQL statement.\n  var assetid_features = Filter(FeatureSetById($datastore, layerIndex, [idField], false), sqlFilter)\n  var max_assetid_feature = First(OrderBy(assetid_features, `${idField} DESC`))  \n\n  // If no features match the pattern the featureset will be null, return the first assetid\n  if(max_assetid_feature == null) {   \n    return `${idPrefix}${Right(padding, Count(padding)-1)}1`\n  }\n\n  // when features do match the pattern calculate and return the next assetid  \n  var max_assetid = max_assetid_feature[idField]\n  \n  var next_assetid_number = Number(Replace(max_assetid, idPrefix, \"\")) + 1\n  return `${idPrefix}${Text(next_assetid_number, padding)}`\n}\n\n// Define the edit context so the value is only calculated when the feature is created\nif ($editContext.editType == \"INSERT\") {\n  // return matching prefix pattern and get next value\n  var wildcards = GenerateWildcards(digits, '_')\n  var padding =  GenerateWildcards(digits, '0')\n  if (idPrefix != '') {\n    var sqlFilter = `${idField} LIKE '${idPrefix}${wildcards}' AND ${idField} NOT LIKE '%[^0-9]'`    \n    GetNextId(layerIndex, idField, idPrefix, padding, sqlFilter)\n  }\n\n// return number id's only and get next value\n  else {\n    var sqlFilter = `${idField} NOT LIKE '%[^0-9.]%'`    \n    GetNextId(idPrefix, padding, sqlFilter)\n  }\n\n}\nelse {\n  return $feature[idField]\n}",
+            "name": "expr/detour-id",
+            "returnType": "string",
+            "title": "Detour ID"
+          }
+        ],
+        "title": "Detours"
+      },
+      "showLabels": false,
+      "popupInfo": {
+        "popupElements": [
+          {
+            "type": "fields",
+            "description": "",
+            "fieldInfos": [
+              {
+                "fieldName": "description",
+                "isEditable": true,
+                "label": "Description",
+                "visible": true
+              },
+              {
+                "fieldName": "starttime",
+                "format": {
+                  "dateFormat": "longMonthDayYearShortTime",
+                  "digitSeparator": false
+                },
+                "isEditable": true,
+                "label": "Start Time",
+                "visible": true
+              },
+              {
+                "fieldName": "endtime",
+                "format": {
+                  "dateFormat": "longMonthDayYearShortTime",
+                  "digitSeparator": false
+                },
+                "isEditable": true,
+                "label": "End Time",
+                "visible": true
+              }
+            ],
+            "title": ""
+          },
+          {
+            "type": "fields",
+            "description": "",
+            "fieldInfos": [
+              {
+                "fieldName": "detourid",
+                "isEditable": true,
+                "label": "Detour ID",
+                "visible": true
+              },
+              {
+                "fieldName": "url",
+                "isEditable": true,
+                "label": "Detour URL",
+                "visible": true
+              }
+            ],
+            "title": "Additional Details"
+          },
+          {
+            "type": "relationship",
+            "description": "",
+            "displayCount": 1,
+            "displayType": "list",
+            "orderByFields": [
+              {
+                "field": "starttime",
+                "order": "asc"
+              }
+            ],
+            "relationshipId": 1,
+            "title": "Closures"
+          }
+        ],
+        "relatedRecordsInfo": {
+          "showRelatedRecords": true,
+          "orderByFields": [
+            {
+              "field": "relationships/1/starttime",
+              "order": "asc"
+            }
+          ]
+        },
+        "fieldInfos": [
+          {
+            "fieldName": "OBJECTID",
+            "isEditable": false,
+            "label": "OBJECTID",
+            "visible": false
+          },
+          {
+            "fieldName": "detourid",
+            "isEditable": true,
+            "label": "Detour ID",
+            "visible": true
+          },
+          {
+            "fieldName": "street",
+            "isEditable": true,
+            "label": "Street Name",
+            "visible": false
+          },
+          {
+            "fieldName": "description",
+            "isEditable": true,
+            "label": "Description",
+            "visible": true
+          },
+          {
+            "fieldName": "starttime",
+            "format": {
+              "dateFormat": "longMonthDayYearShortTime",
+              "digitSeparator": false
+            },
+            "isEditable": true,
+            "label": "Start Time",
+            "visible": true
+          },
+          {
+            "fieldName": "endtime",
+            "format": {
+              "dateFormat": "longMonthDayYearShortTime",
+              "digitSeparator": false
+            },
+            "isEditable": true,
+            "label": "End Time",
+            "visible": true
+          },
+          {
+            "fieldName": "url",
+            "isEditable": true,
+            "label": "Detour URL",
+            "visible": true
+          },
+          {
+            "fieldName": "activeincid",
+            "isEditable": true,
+            "label": "Active Incident",
+            "visible": false
+          },
+          {
+            "fieldName": "closureglobalid",
+            "isEditable": true,
+            "label": "Closure GlobalID",
+            "visible": false
+          },
+          {
+            "fieldName": "globalid",
+            "isEditable": false,
+            "label": "GlobalID",
+            "visible": false
+          },
+          {
+            "fieldName": "created_user",
+            "isEditable": false,
+            "label": "Created By",
+            "visible": false
+          },
+          {
+            "fieldName": "created_date",
+            "format": {
+              "dateFormat": "longMonthDayYear",
+              "digitSeparator": false
+            },
+            "isEditable": false,
+            "label": "Created On",
+            "visible": false
+          },
+          {
+            "fieldName": "last_edited_user",
+            "isEditable": false,
+            "label": "Last Edited By",
+            "visible": false
+          },
+          {
+            "fieldName": "last_edited_date",
+            "format": {
+              "dateFormat": "longMonthDayYear",
+              "digitSeparator": false
+            },
+            "isEditable": false,
+            "label": "Last Edited On",
+            "visible": false
+          },
+          {
+            "fieldName": "Shape__Length",
+            "format": {
+              "digitSeparator": true,
+              "places": 2
+            },
+            "isEditable": false,
+            "label": "Shape__Length",
+            "visible": false
+          }
+        ],
+        "showLastEditInfo": false,
+        "title": "Detour: {street}"
+      }
+    },
+    {
+      "id": "18a3d6d7cce-layer-4",
+      "showLegend": true,
+      "opacity": 1,
+      "disablePopup": false,
+      "title": "Closures",
+      "url": "https://services7.arcgis.com/piPfTFmrV9d1DIvN/arcgis/rest/services/RoadClosures_efde02c3f4364572b7fb1e6bd373a90e/FeatureServer/1",
+      "itemId": "37fc621f5add4c79b86d259510d3106e",
+      "layerType": "ArcGISFeatureLayer",
+      "refreshInterval": 0,
+      "layerDefinition": {
+        "minScale": 0,
+        "maxScale": 0,
+        "featureReduction": null,
+        "definitionExpression": null,
+        "drawingInfo": {
+          "renderer": {
+            "authoringInfo": {},
+            "type": "uniqueValue",
+            "visualVariables": [
+              {
+                "type": "sizeInfo",
+                "valueExpression": "$view.scale",
+                "stops": [
+                  {
+                    "size": 21,
+                    "value": 2500
+                  },
+                  {
+                    "size": 15.75,
+                    "value": 5000
+                  },
+                  {
+                    "size": 10.5,
+                    "value": 10000
+                  },
+                  {
+                    "size": 7,
+                    "value": 15000
+                  }
+                ]
+              }
+            ],
+            "field1": "direction",
+            "fieldDelimiter": ",",
+            "uniqueValueGroups": [
+              {
+                "classes": [
+                  {
+                    "label": "One Direction",
+                    "symbol": {
+                      "type": "CIMSymbolReference",
+                      "symbol": {
+                        "type": "CIMLineSymbol",
+                        "symbolLayers": [
+                          {
+                            "type": "CIMVectorMarker",
+                            "enable": true,
+                            "anchorPoint": {
+                              "x": 0.3,
+                              "y": 0
+                            },
+                            "anchorPointUnits": "Relative",
+                            "dominantSizeAxis3D": "Z",
+                            "size": 14,
+                            "billboardMode3D": "FaceNearPlane",
+                            "markerPlacement": {
+                              "type": "CIMMarkerPlacementAtExtremities",
+                              "angleToLine": true,
+                              "extremityPlacement": "JustEnd"
+                            },
+                            "frame": {
+                              "xmin": 1.22,
+                              "ymin": 1.57,
+                              "xmax": 19.05,
+                              "ymax": 17.57
+                            },
+                            "markerGraphics": [
+                              {
+                                "type": "CIMMarkerGraphic",
+                                "geometry": {
+                                  "rings": [
+                                    [
+                                      [
+                                        1.22,
+                                        17.57
+                                      ],
+                                      [
+                                        4.03,
+                                        12.45
+                                      ],
+                                      [
+                                        4.03,
+                                        6.7
+                                      ],
+                                      [
+                                        1.22,
+                                        1.57
+                                      ],
+                                      [
+                                        19.05,
+                                        9.57
+                                      ],
+                                      [
+                                        1.22,
+                                        17.57
+                                      ]
+                                    ]
+                                  ]
+                                },
+                                "symbol": {
+                                  "type": "CIMPolygonSymbol",
+                                  "symbolLayers": [
+                                    {
+                                      "type": "CIMSolidFill",
+                                      "enable": true,
+                                      "color": [
+                                        191,
+                                        31,
+                                        0,
+                                        255
+                                      ]
+                                    }
+                                  ],
+                                  "angleAlignment": "Map"
+                                }
+                              }
+                            ],
+                            "respectFrame": true
+                          },
+                          {
+                            "type": "CIMSolidStroke",
+                            "effects": [
+                              {
+                                "type": "CIMGeometricEffectCut",
+                                "beginCut": 0,
+                                "endCut": 3
+                              }
+                            ],
+                            "enable": true,
+                            "capStyle": "Butt",
+                            "joinStyle": "Round",
+                            "lineStyle3D": "Strip",
+                            "miterLimit": 10,
+                            "width": 4,
+                            "color": [
+                              191,
+                              31,
+                              0,
+                              255
+                            ]
+                          }
+                        ]
+                      }
+                    },
+                    "values": [
+                      [
+                        "One Direction"
+                      ]
+                    ]
+                  },
+                  {
+                    "label": "Both Directions",
+                    "symbol": {
+                      "type": "CIMSymbolReference",
+                      "symbol": {
+                        "type": "CIMLineSymbol",
+                        "symbolLayers": [
+                          {
+                            "type": "CIMVectorMarker",
+                            "enable": true,
+                            "anchorPoint": {
+                              "x": 0.3,
+                              "y": 0
+                            },
+                            "anchorPointUnits": "Relative",
+                            "dominantSizeAxis3D": "Z",
+                            "size": 14,
+                            "billboardMode3D": "FaceNearPlane",
+                            "markerPlacement": {
+                              "type": "CIMMarkerPlacementAtExtremities",
+                              "angleToLine": true,
+                              "extremityPlacement": "Both"
+                            },
+                            "frame": {
+                              "xmin": 1.22,
+                              "ymin": 1.57,
+                              "xmax": 19.05,
+                              "ymax": 17.57
+                            },
+                            "markerGraphics": [
+                              {
+                                "type": "CIMMarkerGraphic",
+                                "geometry": {
+                                  "rings": [
+                                    [
+                                      [
+                                        1.22,
+                                        17.57
+                                      ],
+                                      [
+                                        4.03,
+                                        12.45
+                                      ],
+                                      [
+                                        4.03,
+                                        6.7
+                                      ],
+                                      [
+                                        1.22,
+                                        1.57
+                                      ],
+                                      [
+                                        19.05,
+                                        9.57
+                                      ],
+                                      [
+                                        1.22,
+                                        17.57
+                                      ]
+                                    ]
+                                  ]
+                                },
+                                "symbol": {
+                                  "type": "CIMPolygonSymbol",
+                                  "symbolLayers": [
+                                    {
+                                      "type": "CIMSolidFill",
+                                      "enable": true,
+                                      "color": [
+                                        191,
+                                        31,
+                                        0,
+                                        255
+                                      ]
+                                    }
+                                  ],
+                                  "angleAlignment": "Map"
+                                }
+                              }
+                            ],
+                            "respectFrame": true
+                          },
+                          {
+                            "type": "CIMSolidStroke",
+                            "effects": [
+                              {
+                                "type": "CIMGeometricEffectCut",
+                                "beginCut": 3,
+                                "endCut": 3
+                              }
+                            ],
+                            "enable": true,
+                            "capStyle": "Butt",
+                            "joinStyle": "Round",
+                            "lineStyle3D": "Strip",
+                            "miterLimit": 10,
+                            "width": 4,
+                            "color": [
+                              191,
+                              31,
+                              0,
+                              255
+                            ]
+                          }
+                        ]
+                      }
+                    },
+                    "values": [
+                      [
+                        "Both Directions"
+                      ]
+                    ]
+                  }
+                ]
+              }
+            ],
+            "uniqueValueInfos": [
+              {
+                "label": "One Direction",
+                "symbol": {
+                  "type": "CIMSymbolReference",
+                  "symbol": {
+                    "type": "CIMLineSymbol",
+                    "symbolLayers": [
+                      {
+                        "type": "CIMVectorMarker",
+                        "enable": true,
+                        "anchorPoint": {
+                          "x": 0.3,
+                          "y": 0
+                        },
+                        "anchorPointUnits": "Relative",
+                        "dominantSizeAxis3D": "Z",
+                        "size": 14,
+                        "billboardMode3D": "FaceNearPlane",
+                        "markerPlacement": {
+                          "type": "CIMMarkerPlacementAtExtremities",
+                          "angleToLine": true,
+                          "extremityPlacement": "JustEnd"
+                        },
+                        "frame": {
+                          "xmin": 1.22,
+                          "ymin": 1.57,
+                          "xmax": 19.05,
+                          "ymax": 17.57
+                        },
+                        "markerGraphics": [
+                          {
+                            "type": "CIMMarkerGraphic",
+                            "geometry": {
+                              "rings": [
+                                [
+                                  [
+                                    1.22,
+                                    17.57
+                                  ],
+                                  [
+                                    4.03,
+                                    12.45
+                                  ],
+                                  [
+                                    4.03,
+                                    6.7
+                                  ],
+                                  [
+                                    1.22,
+                                    1.57
+                                  ],
+                                  [
+                                    19.05,
+                                    9.57
+                                  ],
+                                  [
+                                    1.22,
+                                    17.57
+                                  ]
+                                ]
+                              ]
+                            },
+                            "symbol": {
+                              "type": "CIMPolygonSymbol",
+                              "symbolLayers": [
+                                {
+                                  "type": "CIMSolidFill",
+                                  "enable": true,
+                                  "color": [
+                                    191,
+                                    31,
+                                    0,
+                                    255
+                                  ]
+                                }
+                              ],
+                              "angleAlignment": "Map"
+                            }
+                          }
+                        ],
+                        "respectFrame": true
+                      },
+                      {
+                        "type": "CIMSolidStroke",
+                        "effects": [
+                          {
+                            "type": "CIMGeometricEffectCut",
+                            "beginCut": 0,
+                            "endCut": 3
+                          }
+                        ],
+                        "enable": true,
+                        "capStyle": "Butt",
+                        "joinStyle": "Round",
+                        "lineStyle3D": "Strip",
+                        "miterLimit": 10,
+                        "width": 4,
+                        "color": [
+                          191,
+                          31,
+                          0,
+                          255
+                        ]
+                      }
+                    ]
+                  }
+                },
+                "value": "One Direction"
+              },
+              {
+                "label": "Both Directions",
+                "symbol": {
+                  "type": "CIMSymbolReference",
+                  "symbol": {
+                    "type": "CIMLineSymbol",
+                    "symbolLayers": [
+                      {
+                        "type": "CIMVectorMarker",
+                        "enable": true,
+                        "anchorPoint": {
+                          "x": 0.3,
+                          "y": 0
+                        },
+                        "anchorPointUnits": "Relative",
+                        "dominantSizeAxis3D": "Z",
+                        "size": 14,
+                        "billboardMode3D": "FaceNearPlane",
+                        "markerPlacement": {
+                          "type": "CIMMarkerPlacementAtExtremities",
+                          "angleToLine": true,
+                          "extremityPlacement": "Both"
+                        },
+                        "frame": {
+                          "xmin": 1.22,
+                          "ymin": 1.57,
+                          "xmax": 19.05,
+                          "ymax": 17.57
+                        },
+                        "markerGraphics": [
+                          {
+                            "type": "CIMMarkerGraphic",
+                            "geometry": {
+                              "rings": [
+                                [
+                                  [
+                                    1.22,
+                                    17.57
+                                  ],
+                                  [
+                                    4.03,
+                                    12.45
+                                  ],
+                                  [
+                                    4.03,
+                                    6.7
+                                  ],
+                                  [
+                                    1.22,
+                                    1.57
+                                  ],
+                                  [
+                                    19.05,
+                                    9.57
+                                  ],
+                                  [
+                                    1.22,
+                                    17.57
+                                  ]
+                                ]
+                              ]
+                            },
+                            "symbol": {
+                              "type": "CIMPolygonSymbol",
+                              "symbolLayers": [
+                                {
+                                  "type": "CIMSolidFill",
+                                  "enable": true,
+                                  "color": [
+                                    191,
+                                    31,
+                                    0,
+                                    255
+                                  ]
+                                }
+                              ],
+                              "angleAlignment": "Map"
+                            }
+                          }
+                        ],
+                        "respectFrame": true
+                      },
+                      {
+                        "type": "CIMSolidStroke",
+                        "effects": [
+                          {
+                            "type": "CIMGeometricEffectCut",
+                            "beginCut": 3,
+                            "endCut": 3
+                          }
+                        ],
+                        "enable": true,
+                        "capStyle": "Butt",
+                        "joinStyle": "Round",
+                        "lineStyle3D": "Strip",
+                        "miterLimit": 10,
+                        "width": 4,
+                        "color": [
+                          191,
+                          31,
+                          0,
+                          255
+                        ]
+                      }
+                    ]
+                  }
+                },
+                "value": "Both Directions"
+              }
+            ]
+          }
+        }
+      },
+      "timeAnimation": true,
+      "blendMode": "normal",
+      "effect": [
+        {
+          "scale": 9027.97741,
+          "value": [
+            {
+              "type": "drop-shadow",
+              "xoffset": 0.375,
+              "yoffset": 0.375,
+              "blurRadius": 0.75,
+              "color": [
+                0,
+                0,
+                0,
+                255
+              ]
+            }
+          ]
+        },
+        {
+          "scale": 2256.9943525,
+          "value": [
+            {
+              "type": "drop-shadow",
+              "xoffset": 0.75,
+              "yoffset": 0.75,
+              "blurRadius": 1.5,
+              "color": [
+                0,
+                0,
+                0,
+                255
+              ]
+            }
+          ]
+        },
+        {
+          "scale": 564.248588125,
+          "value": [
+            {
+              "type": "drop-shadow",
+              "xoffset": 1.5,
+              "yoffset": 1.5,
+              "blurRadius": 3,
+              "color": [
+                0,
+                0,
+                0,
+                255
+              ]
+            }
+          ]
+        }
+      ],
+      "featureEffect": null,
+      "formInfo": {
+        "formElements": [
+          {
+            "description": "Name of street closed (Required)",
+            "label": "Street Name",
+            "type": "field",
+            "editable": false,
+            "editableExpression": "expr",
+            "fieldName": "street",
+            "inputType": {
+              "type": "text-box",
+              "maxLength": 150,
+              "minLength": 0
+            },
+            "requiredExpression": "expr/system/true",
+            "valueExpression": "expr/living-atlas-street-name"
+          },
+          {
+            "description": "",
+            "label": "Override Street Name",
+            "type": "field",
+            "editable": true,
+            "editableExpression": "expr/system/true",
+            "fieldName": "streetoverride",
+            "inputType": {
+              "type": "switch",
+              "offValue": "No",
+              "onValue": "Yes"
+            }
+          },
+          {
+            "description": "Direction of travel closed (Required)",
+            "label": "Direction",
+            "type": "field",
+            "editable": true,
+            "editableExpression": "expr/system/true",
+            "fieldName": "direction",
+            "inputType": {
+              "type": "combo-box",
+              "noValueOptionLabel": "",
+              "showNoValueOption": false
+            },
+            "requiredExpression": "expr/system/true"
+          },
+          {
+            "description": "Reason for closure (Required)",
+            "label": "Reason",
+            "type": "field",
+            "editable": true,
+            "editableExpression": "expr/system/true",
+            "fieldName": "reason",
+            "inputType": {
+              "type": "combo-box",
+              "noValueOptionLabel": "",
+              "showNoValueOption": false
+            },
+            "requiredExpression": "expr/system/true"
+          },
+          {
+            "description": "Description of closure (Optional)",
+            "label": "Description",
+            "type": "field",
+            "editable": true,
+            "editableExpression": "expr/system/true",
+            "fieldName": "description",
+            "inputType": {
+              "type": "text-area",
+              "maxLength": 4000,
+              "minLength": 0
+            }
+          },
+          {
+            "description": "Lanes impacted by closure (Required)",
+            "label": "Impact",
+            "type": "field",
+            "editable": true,
+            "editableExpression": "expr/system/true",
+            "fieldName": "laneimpact",
+            "inputType": {
+              "type": "combo-box",
+              "noValueOptionLabel": "",
+              "showNoValueOption": false
+            },
+            "requiredExpression": "expr/system/true"
+          },
+          {
+            "description": "Date and time closure begins (Required)",
+            "label": "Starts",
+            "type": "field",
+            "editable": true,
+            "editableExpression": "expr/system/true",
+            "fieldName": "starttime",
+            "inputType": {
+              "type": "datetime-picker",
+              "includeTime": true
+            },
+            "requiredExpression": "expr/system/true"
+          },
+          {
+            "description": "Date and time closure ends (Required)",
+            "label": "Ends",
+            "type": "field",
+            "editable": true,
+            "editableExpression": "expr/system/true",
+            "fieldName": "endtime",
+            "inputType": {
+              "type": "datetime-picker",
+              "includeTime": true
+            },
+            "requiredExpression": "expr/system/true"
+          },
+          {
+            "description": "",
+            "label": "Additional Details",
+            "type": "group",
+            "formElements": [
+              {
+                "description": "Description of any alternate route (Optional)",
+                "label": "Alternate Route",
+                "type": "field",
+                "editable": true,
+                "editableExpression": "expr/system/true",
+                "fieldName": "altroute",
+                "inputType": {
+                  "type": "text-area",
+                  "maxLength": 4000,
+                  "minLength": 0
+                }
+              },
+              {
+                "description": "Type of vehicles that can access street impacted (Optional)",
+                "label": "Access Allowed",
+                "type": "field",
+                "editable": true,
+                "editableExpression": "expr/system/true",
+                "fieldName": "accessallowed",
+                "inputType": {
+                  "type": "combo-box",
+                  "noValueOptionLabel": "No value",
+                  "showNoValueOption": true
+                }
+              },
+              {
+                "description": "URL to additional details (Optional)",
+                "label": "URL",
+                "type": "field",
+                "editable": true,
+                "editableExpression": "expr/system/true",
+                "fieldName": "url",
+                "inputType": {
+                  "type": "text-box",
+                  "maxLength": 1000,
+                  "minLength": 0
+                }
+              },
+              {
+                "description": "Locally assigned road closure identifier (Optional)",
+                "label": "Closure ID",
+                "type": "field",
+                "visibilityExpression": "expr/system/false",
+                "editable": false,
+                "fieldName": "closureid",
+                "inputType": {
+                  "type": "text-box",
+                  "maxLength": 50,
+                  "minLength": 0
+                },
+                "valueExpression": "expr/closure-id"
+              }
+            ],
+            "initialState": "collapsed"
+          },
+          {
+            "label": "Contact Information",
+            "type": "group",
+            "formElements": [
+              {
+                "description": "Contact name (Optional)",
+                "label": "Name",
+                "type": "field",
+                "editable": true,
+                "editableExpression": "expr/system/true",
+                "fieldName": "pocname",
+                "inputType": {
+                  "type": "text-box",
+                  "maxLength": 150,
+                  "minLength": 0
+                }
+              },
+              {
+                "description": "Contact email (Optional)",
+                "label": "Email",
+                "type": "field",
+                "editable": true,
+                "editableExpression": "expr/system/true",
+                "fieldName": "pocemail",
+                "inputType": {
+                  "type": "text-box",
+                  "maxLength": 150,
+                  "minLength": 0
+                }
+              },
+              {
+                "description": "Contact phone number (Optional)",
+                "label": "Phone",
+                "type": "field",
+                "editable": true,
+                "editableExpression": "expr/system/true",
+                "fieldName": "pocphone",
+                "inputType": {
+                  "type": "text-box",
+                  "maxLength": 15,
+                  "minLength": 0
+                }
+              }
+            ],
+            "initialState": "collapsed"
+          },
+          {
+            "label": "Blocks",
+            "type": "relationship",
+            "displayCount": 3,
+            "displayType": "list",
+            "editableExpression": "expr/system/true",
+            "orderByFields": [
+              {
+                "field": "starttime",
+                "order": "desc"
+              }
+            ],
+            "relationshipId": 0
+          },
+          {
+            "label": "Detours",
+            "type": "relationship",
+            "displayCount": 3,
+            "displayType": "list",
+            "editableExpression": "expr/system/true",
+            "orderByFields": [
+              {
+                "field": "starttime",
+                "order": "desc"
+              }
+            ],
+            "relationshipId": 1
+          }
+        ],
+        "expressionInfos": [
+          {
+            "expression": "false",
+            "name": "expr/system/false",
+            "returnType": "boolean",
+            "title": "False"
+          },
+          {
+            "expression": "true",
+            "name": "expr/system/true",
+            "returnType": "boolean",
+            "title": "True"
+          },
+          {
+            "expression": "var roadsItemID = \"9df2ddfa696a4271a749aac54d32814d\";\nvar roadsLayerID = 0;\nvar roadNameField = \"name\";\nvar bufferDistance = 10;\nvar bufferUnit = \"meter\";\n\n/*DO NOT CHANGE ANYTHING BELOW THIS LINE\n-------------------------------------------------------------------------*/\nvar arcgisPortal = Portal('https://localdeployment.maps.arcgis.com');\n\n// Get all the intersecting roads within the buffer distance of the closure\nvar closureBuffer = Buffer($feature, bufferDistance, bufferUnit);\nvar intersectingRoads = Intersects(FeatureSetByPortalItem(arcgisPortal, roadsItemID, roadsLayerID, [roadNameField], true), closureBuffer);\n\n// Get a list of all the unique road names\nvar uniqueRoadNames = {};\nfor (var road in intersectingRoads) {\n\tvar roadName = road[roadNameField];\n\t\tif (IsEmpty(roadName)) continue;\n\tif (HasKey(uniqueRoadNames, roadName)) {\n\t\tPush(uniqueRoadNames[roadName], road);\n\t}\n\telse {\n\t\tuniqueRoadNames[roadName] = [road];\n\t}\n}\n\n// Union the road segments with the same road name\n// Test if the closure falls completely within the buffer distance of the unioned road segments\nvar containingRoads = {}\nfor (var roadName in uniqueRoadNames) {\n\tvar roadUnion = Union(uniqueRoadNames[roadName]);\n\tvar bufferRoadUnion = Buffer(roadUnion, bufferDistance, bufferUnit);\n\tif (Within($feature, bufferRoadUnion)) containingRoads[roadName] = [roadUnion, uniqueRoadNames[roadName]];\n}\n\n// If the closure falls completely within multiple unioned road segements determine which the closure is closest to\nvar closestRoad = null;\nvar closestDistance = null;\nfor (var roadName in containingRoads) {\n\tvar dist = Distance($feature, containingRoads[roadName][0])\n\tif (IsEmpty(closestDistance) || dist < closestDistance) {\n\t\tclosestRoad = [roadName, containingRoads[roadName][0], containingRoads[roadName][1]];\n\t\tclosestDistance = dist;\n\t}\n}\n\n// If there are no unioned road segments with the same name that the closure matches return null\n// Otherwise return the closest matching road name\nif (IsEmpty(closestRoad)) return null\nreturn closestRoad[0]",
+            "name": "expr/street-name",
+            "returnType": "string",
+            "title": "Street Name"
+          },
+          {
+            "expression": "var layerIndex = '1'\nvar idField = 'closureid'\nvar idPrefix = 'cl-' \nvar digits = 6\n\n/*DO NOT CHANGE ANYTHING BELOW THIS LINE\n-------------------------------------------------------------------------*/\n\nfunction GenerateWildcards(digits, wildcard) {\n  var wildcards = ''\n  for (var i=0; i < digits; i++) {\n    wildcards += wildcard\n  }\n  return wildcards\n} \n\nfunction GetNextId(layerIndex, idField, idPrefix, padding, sqlFilter) {\n  // get the feature with the greatest assetid that matches the id pattern specified in the SQL statement.\n  var assetid_features = Filter(FeatureSetById($datastore, layerIndex, [idField], false), sqlFilter)\n  var max_assetid_feature = First(OrderBy(assetid_features, `${idField} DESC`))  \n\n  // If no features match the pattern the featureset will be null, return the first assetid\n  if(max_assetid_feature == null) {   \n    return `${idPrefix}${Right(padding, Count(padding)-1)}1`\n  }\n\n  // when features do match the pattern calculate and return the next assetid  \n  var max_assetid = max_assetid_feature[idField]\n  \n  var next_assetid_number = Number(Replace(max_assetid, idPrefix, \"\")) + 1\n  return `${idPrefix}${Text(next_assetid_number, padding)}`\n}\n\n// Define the edit context so the value is only calculated when the feature is created\nif ($editContext.editType == \"INSERT\") {\n  // return matching prefix pattern and get next value\n  var wildcards = GenerateWildcards(digits, '_')\n  var padding =  GenerateWildcards(digits, '0')\n  if (idPrefix != '') {\n    var sqlFilter = `${idField} LIKE '${idPrefix}${wildcards}' AND ${idField} NOT LIKE '%[^0-9]'`    \n    GetNextId(layerIndex, idField, idPrefix, padding, sqlFilter)\n  }\n\n// return number id's only and get next value\n  else {\n    var sqlFilter = `${idField} NOT LIKE '%[^0-9.]%'`    \n    GetNextId(idPrefix, padding, sqlFilter)\n  }\n\n}\nelse {\n  return $feature[idField]\n}",
+            "name": "expr/closure-id",
+            "returnType": "string",
+            "title": "Closure ID"
+          },
+          {
+            "expression": "DomainName($feature, \"streetoverride\") == \"Yes\"",
+            "name": "expr",
+            "returnType": "boolean",
+            "title": "Street Is Editable"
+          },
+          {
+            "expression": "var roadsItemID = \"9df2ddfa696a4271a749aac54d32814d\";\nvar bufferDistance = 10;\nvar bufferUnit = \"meter\";\n\n/*DO NOT CHANGE ANYTHING BELOW THIS LINE\n-------------------------------------------------------------------------*/\nvar arcgisPortal = Portal('https://www.arcgis.com');\n\n// Get all the intersecting roads within the buffer distance of the closure\nvar closureBuffer = Buffer($feature, bufferDistance, bufferUnit);\nvar intersectingRoads = Intersects(FeatureSetByPortalItem(arcgisPortal, roadsItemID, 0, [\"LABEL_LOCAL\", \"HWY1\"], true), closureBuffer);\n\n// Get a list of all the unique road names\nvar uniqueRoadNames = {};\nfor (var road in intersectingRoads) {\n\tvar roadName = road[\"LABEL_LOCAL\"];\n\tif (IsEmpty(roadName)) {\n\t\troadName = road[\"HWY1\"];\n\t}\n\tif (IsEmpty(roadName)) continue;\n\tif (HasKey(uniqueRoadNames, roadName)) {\n\t\tPush(uniqueRoadNames[roadName], road);\n\t}\n\telse {\n\t\tuniqueRoadNames[roadName] = [road];\n\t}\n}\n\n// Union the road segments with the same road name\n// Test if the closure falls completely within the buffer distance of the unioned road segments\nvar containingRoads = {}\nfor (var roadName in uniqueRoadNames) {\n\tvar roadUnion = Union(uniqueRoadNames[roadName]);\n\tvar bufferRoadUnion = Buffer(roadUnion, bufferDistance, bufferUnit);\n\tif (Within($feature, bufferRoadUnion)) containingRoads[roadName] = [roadUnion, uniqueRoadNames[roadName]];\n}\n\n// If the closure falls completely within multiple unioned road segements determine which the closure is closest to\nvar closestRoad = null;\nvar closestDistance = null;\nfor (var roadName in containingRoads) {\n\tvar dist = Distance($feature, containingRoads[roadName][0])\n\tif (IsEmpty(closestDistance) || dist < closestDistance) {\n\t\tclosestRoad = [roadName, containingRoads[roadName][0], containingRoads[roadName][1]];\n\t\tclosestDistance = dist;\n\t}\n}\n\n// If there are no unioned road segments with the same name that the closure matches return null\n// Otherwise return the closest matching road name\nif (IsEmpty(closestRoad)) return null\nreturn closestRoad[0]",
+            "name": "expr/living-atlas-street-name",
+            "returnType": "string",
+            "title": "Living Atlas Street Name"
+          }
+        ],
+        "preserveFieldValuesWhenHidden": true,
+        "title": "Closure"
+      },
+      "showLabels": false,
+      "popupInfo": {
+        "popupElements": [
+          {
+            "type": "fields",
+            "description": "",
+            "fieldInfos": [
+              {
+                "fieldName": "reason",
+                "format": {
+                  "digitSeparator": true,
+                  "places": 0
+                },
+                "isEditable": true,
+                "label": "Reason",
+                "visible": true
+              },
+              {
+                "fieldName": "direction",
+                "format": {
+                  "digitSeparator": true,
+                  "places": 0
+                },
+                "isEditable": true,
+                "label": "Direction",
+                "visible": true
+              },
+              {
+                "fieldName": "description",
+                "isEditable": true,
+                "label": "Description",
+                "visible": true
+              },
+              {
+                "fieldName": "laneimpact",
+                "format": {
+                  "digitSeparator": true,
+                  "places": 0
+                },
+                "isEditable": true,
+                "label": "Lane Impact",
+                "visible": true
+              },
+              {
+                "fieldName": "starttime",
+                "format": {
+                  "dateFormat": "longMonthDayYearShortTime",
+                  "digitSeparator": false
+                },
+                "isEditable": true,
+                "label": "Start Time",
+                "visible": true
+              },
+              {
+                "fieldName": "endtime",
+                "format": {
+                  "dateFormat": "longMonthDayYearShortTime",
+                  "digitSeparator": false
+                },
+                "isEditable": true,
+                "label": "End Time",
+                "visible": true
+              }
+            ],
+            "title": ""
+          },
+          {
+            "type": "fields",
+            "description": "",
+            "fieldInfos": [
+              {
+                "fieldName": "closureid",
+                "isEditable": true,
+                "label": "Closure ID",
+                "visible": true
+              },
+              {
+                "fieldName": "altroute",
+                "isEditable": true,
+                "label": "Alternate Route",
+                "visible": true
+              },
+              {
+                "fieldName": "accessallowed",
+                "format": {
+                  "digitSeparator": true,
+                  "places": 0
+                },
+                "isEditable": true,
+                "label": "Access Allowed",
+                "visible": true
+              },
+              {
+                "fieldName": "url",
+                "isEditable": true,
+                "label": "Closure URL",
+                "visible": true
+              }
+            ],
+            "title": "Additional Details"
+          },
+          {
+            "type": "fields",
+            "description": "",
+            "fieldInfos": [
+              {
+                "fieldName": "pocname",
+                "isEditable": true,
+                "label": "Name",
+                "visible": true
+              },
+              {
+                "fieldName": "pocemail",
+                "isEditable": true,
+                "label": "Email",
+                "visible": true
+              },
+              {
+                "fieldName": "pocphone",
+                "isEditable": true,
+                "label": "Phone",
+                "visible": true
+              }
+            ],
+            "title": "Contact Information"
+          },
+          {
+            "type": "relationship",
+            "description": "",
+            "displayCount": 5,
+            "displayType": "list",
+            "orderByFields": [
+              {
+                "field": "starttime",
+                "order": "asc"
+              }
+            ],
+            "relationshipId": 0,
+            "title": "Blocks"
+          },
+          {
+            "type": "relationship",
+            "description": "",
+            "displayCount": 1,
+            "displayType": "list",
+            "orderByFields": [
+              {
+                "field": "starttime",
+                "order": "asc"
+              }
+            ],
+            "relationshipId": 1,
+            "title": "Detours"
+          }
+        ],
+        "relatedRecordsInfo": {
+          "showRelatedRecords": true,
+          "orderByFields": [
+            {
+              "field": "relationships/0/starttime",
+              "order": "asc"
+            },
+            {
+              "field": "relationships/1/starttime",
+              "order": "asc"
+            }
+          ]
+        },
+        "fieldInfos": [
+          {
+            "fieldName": "OBJECTID",
+            "isEditable": false,
+            "label": "OBJECTID",
+            "visible": false
+          },
+          {
+            "fieldName": "closureid",
+            "isEditable": true,
+            "label": "Closure ID",
+            "visible": true
+          },
+          {
+            "fieldName": "street",
+            "isEditable": true,
+            "label": "Street Name",
+            "visible": false
+          },
+          {
+            "fieldName": "direction",
+            "format": {
+              "digitSeparator": true,
+              "places": 0
+            },
+            "isEditable": true,
+            "label": "Direction",
+            "visible": true
+          },
+          {
+            "fieldName": "reason",
+            "format": {
+              "digitSeparator": true,
+              "places": 0
+            },
+            "isEditable": true,
+            "label": "Reason",
+            "visible": true
+          },
+          {
+            "fieldName": "laneimpact",
+            "format": {
+              "digitSeparator": true,
+              "places": 0
+            },
+            "isEditable": true,
+            "label": "Lane Impact",
+            "visible": true
+          },
+          {
+            "fieldName": "accessallowed",
+            "format": {
+              "digitSeparator": true,
+              "places": 0
+            },
+            "isEditable": true,
+            "label": "Access Allowed",
+            "visible": true
+          },
+          {
+            "fieldName": "description",
+            "isEditable": true,
+            "label": "Description",
+            "visible": true
+          },
+          {
+            "fieldName": "starttime",
+            "format": {
+              "dateFormat": "longMonthDayYearShortTime",
+              "digitSeparator": false
+            },
+            "isEditable": true,
+            "label": "Start Time",
+            "visible": true
+          },
+          {
+            "fieldName": "endtime",
+            "format": {
+              "dateFormat": "longMonthDayYearShortTime",
+              "digitSeparator": false
+            },
+            "isEditable": true,
+            "label": "End Time",
+            "visible": true
+          },
+          {
+            "fieldName": "altroute",
+            "isEditable": true,
+            "label": "Alternate Route",
+            "visible": true
+          },
+          {
+            "fieldName": "pocname",
+            "isEditable": true,
+            "label": "Name",
+            "visible": true
+          },
+          {
+            "fieldName": "pocemail",
+            "isEditable": true,
+            "label": "Email",
+            "visible": true
+          },
+          {
+            "fieldName": "pocphone",
+            "isEditable": true,
+            "label": "Phone",
+            "visible": true
+          },
+          {
+            "fieldName": "url",
+            "isEditable": true,
+            "label": "Closure URL",
+            "visible": true
+          },
+          {
+            "fieldName": "activeincid",
+            "isEditable": true,
+            "label": "Active Incident",
+            "visible": false
+          },
+          {
+            "fieldName": "streetoverride",
+            "isEditable": true,
+            "label": "Street Override",
+            "visible": false
+          },
+          {
+            "fieldName": "globalid",
+            "isEditable": false,
+            "label": "GlobalID",
+            "visible": false
+          },
+          {
+            "fieldName": "created_user",
+            "isEditable": false,
+            "label": "Created By",
+            "visible": false
+          },
+          {
+            "fieldName": "created_date",
+            "format": {
+              "dateFormat": "longMonthDayYear",
+              "digitSeparator": false
+            },
+            "isEditable": false,
+            "label": "Created On",
+            "visible": false
+          },
+          {
+            "fieldName": "last_edited_user",
+            "isEditable": false,
+            "label": "Last Edited By",
+            "visible": false
+          },
+          {
+            "fieldName": "last_edited_date",
+            "format": {
+              "dateFormat": "longMonthDayYear",
+              "digitSeparator": false
+            },
+            "isEditable": false,
+            "label": "Last Edited On",
+            "visible": false
+          },
+          {
+            "fieldName": "Shape__Length",
+            "format": {
+              "digitSeparator": true,
+              "places": 2
+            },
+            "isEditable": false,
+            "label": "Shape__Length",
+            "visible": false
+          }
+        ],
+        "showLastEditInfo": false,
+        "title": "Closure: {street}"
+      }
+    },
+    {
+      "id": "18a3d6d7cce-layer-5",
+      "showLegend": true,
+      "opacity": 1,
+      "disablePopup": false,
+      "title": "Blocks",
+      "url": "https://services7.arcgis.com/piPfTFmrV9d1DIvN/arcgis/rest/services/RoadClosures_efde02c3f4364572b7fb1e6bd373a90e/FeatureServer/0",
+      "itemId": "37fc621f5add4c79b86d259510d3106e",
+      "layerType": "ArcGISFeatureLayer",
+      "refreshInterval": 0,
+      "layerDefinition": {
+        "minScale": 0,
+        "maxScale": 0,
+        "definitionExpression": null,
+        "drawingInfo": {
+          "renderer": {
+            "authoringInfo": {},
+            "type": "simple",
+            "visualVariables": [
+              {
+                "type": "sizeInfo",
+                "valueExpression": "$view.scale",
+                "stops": [
+                  {
+                    "size": 18,
+                    "value": 2500
+                  },
+                  {
+                    "size": 13.5,
+                    "value": 5000
+                  },
+                  {
+                    "size": 9,
+                    "value": 10000
+                  },
+                  {
+                    "size": 6,
+                    "value": 15000
+                  }
+                ]
+              }
+            ],
+            "symbol": {
+              "type": "CIMSymbolReference",
+              "symbol": {
+                "type": "CIMPointSymbol",
+                "symbolLayers": [
+                  {
+                    "type": "CIMVectorMarker",
+                    "enable": true,
+                    "colorLocked": true,
+                    "anchorPointUnits": "Relative",
+                    "dominantSizeAxis3D": "Y",
+                    "size": 18,
+                    "billboardMode3D": "FaceNearPlane",
+                    "frame": {
+                      "xmin": 0,
+                      "ymin": 0,
+                      "xmax": 21,
+                      "ymax": 21
+                    },
+                    "markerGraphics": [
+                      {
+                        "type": "CIMMarkerGraphic",
+                        "geometry": {
+                          "rings": [
+                            [
+                              [
+                                2,
+                                12
+                              ],
+                              [
+                                19,
+                                12
+                              ],
+                              [
+                                19,
+                                9
+                              ],
+                              [
+                                2,
+                                9
+                              ],
+                              [
+                                2,
+                                12
+                              ]
+                            ]
+                          ]
+                        },
+                        "symbol": {
+                          "type": "CIMPolygonSymbol",
+                          "symbolLayers": [
+                            {
+                              "type": "CIMSolidStroke",
+                              "enable": true,
+                              "capStyle": "Round",
+                              "joinStyle": "Round",
+                              "lineStyle3D": "Strip",
+                              "miterLimit": 10,
+                              "width": 0,
+                              "color": [
+                                110,
+                                110,
+                                110,
+                                255
+                              ]
+                            },
+                            {
+                              "type": "CIMSolidFill",
+                              "enable": true,
+                              "color": [
+                                255,
+                                255,
+                                255,
+                                255
+                              ]
+                            }
+                          ],
+                          "angleAlignment": "Map"
+                        }
+                      }
+                    ],
+                    "scaleSymbolsProportionally": true,
+                    "respectFrame": true,
+                    "rotation": 0
+                  },
+                  {
+                    "type": "CIMVectorMarker",
+                    "enable": true,
+                    "anchorPointUnits": "Relative",
+                    "dominantSizeAxis3D": "Y",
+                    "size": 18,
+                    "billboardMode3D": "FaceNearPlane",
+                    "frame": {
+                      "xmin": -5,
+                      "ymin": -5,
+                      "xmax": 5,
+                      "ymax": 5
+                    },
+                    "markerGraphics": [
+                      {
+                        "type": "CIMMarkerGraphic",
+                        "geometry": {
+                          "rings": [
+                            [
+                              [
+                                0,
+                                5
+                              ],
+                              [
+                                0.87,
+                                4.92
+                              ],
+                              [
+                                1.71,
+                                4.7
+                              ],
+                              [
+                                2.5,
+                                4.33
+                              ],
+                              [
+                                3.21,
+                                3.83
+                              ],
+                              [
+                                3.83,
+                                3.21
+                              ],
+                              [
+                                4.33,
+                                2.5
+                              ],
+                              [
+                                4.7,
+                                1.71
+                              ],
+                              [
+                                4.92,
+                                0.87
+                              ],
+                              [
+                                5,
+                                0
+                              ],
+                              [
+                                4.92,
+                                -0.87
+                              ],
+                              [
+                                4.7,
+                                -1.71
+                              ],
+                              [
+                                4.33,
+                                -2.5
+                              ],
+                              [
+                                3.83,
+                                -3.21
+                              ],
+                              [
+                                3.21,
+                                -3.83
+                              ],
+                              [
+                                2.5,
+                                -4.33
+                              ],
+                              [
+                                1.71,
+                                -4.7
+                              ],
+                              [
+                                0.87,
+                                -4.92
+                              ],
+                              [
+                                0,
+                                -5
+                              ],
+                              [
+                                -0.87,
+                                -4.92
+                              ],
+                              [
+                                -1.71,
+                                -4.7
+                              ],
+                              [
+                                -2.5,
+                                -4.33
+                              ],
+                              [
+                                -3.21,
+                                -3.83
+                              ],
+                              [
+                                -3.83,
+                                -3.21
+                              ],
+                              [
+                                -4.33,
+                                -2.5
+                              ],
+                              [
+                                -4.7,
+                                -1.71
+                              ],
+                              [
+                                -4.92,
+                                -0.87
+                              ],
+                              [
+                                -5,
+                                0
+                              ],
+                              [
+                                -4.92,
+                                0.87
+                              ],
+                              [
+                                -4.7,
+                                1.71
+                              ],
+                              [
+                                -4.33,
+                                2.5
+                              ],
+                              [
+                                -3.83,
+                                3.21
+                              ],
+                              [
+                                -3.21,
+                                3.83
+                              ],
+                              [
+                                -2.5,
+                                4.33
+                              ],
+                              [
+                                -1.71,
+                                4.7
+                              ],
+                              [
+                                -0.87,
+                                4.92
+                              ],
+                              [
+                                0,
+                                5
+                              ]
+                            ]
+                          ]
+                        },
+                        "symbol": {
+                          "type": "CIMPolygonSymbol",
+                          "symbolLayers": [
+                            {
+                              "type": "CIMSolidStroke",
+                              "effects": [
+                                {
+                                  "type": "CIMGeometricEffectOffset",
+                                  "method": "Square",
+                                  "offset": -0.25,
+                                  "option": "Fast"
+                                }
+                              ],
+                              "enable": true,
+                              "colorLocked": true,
+                              "capStyle": "Square",
+                              "joinStyle": "Miter",
+                              "lineStyle3D": "Strip",
+                              "miterLimit": 10,
+                              "width": 0.5714285714285714,
+                              "color": [
+                                0,
+                                0,
+                                0,
+                                64
+                              ]
+                            },
+                            {
+                              "type": "CIMSolidFill",
+                              "enable": true,
+                              "color": [
+                                201,
+                                49,
+                                0,
+                                255
+                              ]
+                            }
+                          ],
+                          "angleAlignment": "Map"
+                        }
+                      }
+                    ],
+                    "respectFrame": true,
+                    "rotation": 0
+                  }
+                ],
+                "haloSize": 1,
+                "scaleX": 1,
+                "angleAlignment": "Display",
+                "angle": 0
+              }
+            }
+          }
+        }
+      },
+      "timeAnimation": true,
+      "blendMode": "normal",
+      "effect": [
+        {
+          "scale": 9027.97741,
+          "value": [
+            {
+              "type": "drop-shadow",
+              "xoffset": 0.75,
+              "yoffset": 0.75,
+              "blurRadius": 1.125,
+              "color": [
+                0,
+                0,
+                0,
+                255
+              ]
+            }
+          ]
+        },
+        {
+          "scale": 2256.9943525,
+          "value": [
+            {
+              "type": "drop-shadow",
+              "xoffset": 1.5,
+              "yoffset": 1.5,
+              "blurRadius": 2.25,
+              "color": [
+                0,
+                0,
+                0,
+                255
+              ]
+            }
+          ]
+        },
+        {
+          "scale": 564.248588125,
+          "value": [
+            {
+              "type": "drop-shadow",
+              "xoffset": 3,
+              "yoffset": 3,
+              "blurRadius": 4.5,
+              "color": [
+                0,
+                0,
+                0,
+                255
+              ]
+            }
+          ]
+        }
+      ],
+      "featureEffect": null,
+      "formInfo": {
+        "formElements": [
+          {
+            "description": "Name of street or intersection closed (Required)",
+            "label": "Street or Intersection",
+            "type": "field",
+            "editable": false,
+            "editableExpression": "expr",
+            "fieldName": "street",
+            "inputType": {
+              "type": "text-box",
+              "maxLength": 150,
+              "minLength": 0
+            },
+            "requiredExpression": "expr/system/true",
+            "valueExpression": "expr/living-atlas-street-name"
+          },
+          {
+            "label": "Override Street or Intersection",
+            "type": "field",
+            "editable": true,
+            "editableExpression": "expr/system/true",
+            "fieldName": "streetoverride",
+            "inputType": {
+              "type": "switch",
+              "offValue": "No",
+              "onValue": "Yes"
+            }
+          },
+          {
+            "description": "Direction of travel closed (Required)",
+            "label": "Direction",
+            "type": "field",
+            "editable": true,
+            "editableExpression": "expr/system/true",
+            "fieldName": "direction",
+            "inputType": {
+              "type": "combo-box",
+              "noValueOptionLabel": "",
+              "showNoValueOption": false
+            },
+            "requiredExpression": "expr/system/true"
+          },
+          {
+            "description": "Reason for closure (Required)",
+            "label": "Reason",
+            "type": "field",
+            "editable": true,
+            "editableExpression": "expr/system/true",
+            "fieldName": "reason",
+            "inputType": {
+              "type": "combo-box",
+              "noValueOptionLabel": "",
+              "showNoValueOption": false
+            },
+            "requiredExpression": "expr/system/true"
+          },
+          {
+            "description": "Description of closure (Optional)",
+            "label": "Description",
+            "type": "field",
+            "editable": true,
+            "editableExpression": "expr/system/true",
+            "fieldName": "description",
+            "inputType": {
+              "type": "text-area",
+              "maxLength": 4000,
+              "minLength": 0
+            }
+          },
+          {
+            "description": "Date and time closure begins (Required)",
+            "label": "Starts",
+            "type": "field",
+            "editable": true,
+            "editableExpression": "expr/system/true",
+            "fieldName": "starttime",
+            "inputType": {
+              "type": "datetime-picker",
+              "includeTime": true
+            },
+            "requiredExpression": "expr/system/true"
+          },
+          {
+            "description": "Date and time closure ends (Required)",
+            "label": "Ends",
+            "type": "field",
+            "editable": true,
+            "editableExpression": "expr/system/true",
+            "fieldName": "endtime",
+            "inputType": {
+              "type": "datetime-picker",
+              "includeTime": true
+            },
+            "requiredExpression": "expr/system/true"
+          },
+          {
+            "label": "Additional Details",
+            "type": "group",
+            "formElements": [
+              {
+                "description": "Locally assigned road block identifier (Optional)",
+                "label": "Block ID",
+                "type": "field",
+                "visibilityExpression": "expr/system/false",
+                "editable": false,
+                "fieldName": "blockid",
+                "inputType": {
+                  "type": "text-box",
+                  "maxLength": 50,
+                  "minLength": 0
+                },
+                "valueExpression": "expr/block-id"
+              },
+              {
+                "description": "Type of vehicles that can access street impacted by closure (Optional)",
+                "label": "Access Allowed",
+                "type": "field",
+                "editable": true,
+                "editableExpression": "expr/system/true",
+                "fieldName": "accessallowed",
+                "inputType": {
+                  "type": "combo-box",
+                  "noValueOptionLabel": "No value",
+                  "showNoValueOption": true
+                }
+              },
+              {
+                "description": "URL to additional details (Optional)",
+                "label": "URL",
+                "type": "field",
+                "editable": true,
+                "editableExpression": "expr/system/true",
+                "fieldName": "url",
+                "inputType": {
+                  "type": "text-box",
+                  "maxLength": 1000,
+                  "minLength": 0
+                }
+              }
+            ],
+            "initialState": "collapsed"
+          }
+        ],
+        "expressionInfos": [
+          {
+            "expression": "false",
+            "name": "expr/system/false",
+            "returnType": "boolean",
+            "title": "False"
+          },
+          {
+            "expression": "true",
+            "name": "expr/system/true",
+            "returnType": "boolean",
+            "title": "True"
+          },
+          {
+            "expression": "var layerIndex = '0'\nvar idField = 'blockid'\nvar idPrefix = 'bk-' \nvar digits = 6\n\n/*DO NOT CHANGE ANYTHING BELOW THIS LINE\n-------------------------------------------------------------------------*/\n\nfunction GenerateWildcards(digits, wildcard) {\n  var wildcards = ''\n  for (var i=0; i < digits; i++) {\n    wildcards += wildcard\n  }\n  return wildcards\n} \n\nfunction GetNextId(layerIndex, idField, idPrefix, padding, sqlFilter) {\n  // get the feature with the greatest assetid that matches the id pattern specified in the SQL statement.\n  var assetid_features = Filter(FeatureSetById($datastore, layerIndex, [idField], false), sqlFilter)\n  var max_assetid_feature = First(OrderBy(assetid_features, `${idField} DESC`))  \n\n  // If no features match the pattern the featureset will be null, return the first assetid\n  if(max_assetid_feature == null) {   \n    return `${idPrefix}${Right(padding, Count(padding)-1)}1`\n  }\n\n  // when features do match the pattern calculate and return the next assetid  \n  var max_assetid = max_assetid_feature[idField]\n  \n  var next_assetid_number = Number(Replace(max_assetid, idPrefix, \"\")) + 1\n  return `${idPrefix}${Text(next_assetid_number, padding)}`\n}\n\n// Define the edit context so the value is only calculated when the feature is created\nif ($editContext.editType == \"INSERT\") {\n  // return matching prefix pattern and get next value\n  var wildcards = GenerateWildcards(digits, '_')\n  var padding =  GenerateWildcards(digits, '0')\n  if (idPrefix != '') {\n    var sqlFilter = `${idField} LIKE '${idPrefix}${wildcards}' AND ${idField} NOT LIKE '%[^0-9]'`    \n    GetNextId(layerIndex, idField, idPrefix, padding, sqlFilter)\n  }\n\n// return number id's only and get next value\n  else {\n    var sqlFilter = `${idField} NOT LIKE '%[^0-9.]%'`    \n    GetNextId(idPrefix, padding, sqlFilter)\n  }\n\n}\nelse {\n  return $feature[idField]\n}",
+            "name": "expr/block-id",
+            "returnType": "string",
+            "title": "Block ID"
+          },
+          {
+            "expression": "var roadsItemID = \"9df2ddfa696a4271a749aac54d32814d\";\nvar roadsLayerID = 0;\nvar roadNameField = \"name\";\nvar bufferDistance = 10;\nvar bufferUnit = \"meter\";\n\n/*DO NOT CHANGE ANYTHING BELOW THIS LINE\n-------------------------------------------------------------------------*/\nvar arcgisPortal = Portal('https://localdeployment.maps.arcgis.com');\n\n// Get all the intersecting roads within the buffer distance of the closure\nvar closureBuffer = Buffer($feature, bufferDistance, bufferUnit);\nvar intersectingRoads = Intersects(FeatureSetByPortalItem(arcgisPortal, roadsItemID, roadsLayerID, [roadNameField], true), closureBuffer);\n\n// Loop through the intersecting roads and test if the full road name is null or an empty string\n// If it is not null or empty and not already in the array add it to the array\nvar uniqueRoadNames = [];\nfor (var road in intersectingRoads) {\n    var roadname = road[roadNameField];\n    if (IsEmpty(roadname) || IndexOf(uniqueRoadNames, roadname) != -1) continue;\n    Push(uniqueRoadNames, roadname);\n}\n\n// Return the road names concatenated with an ampersand between\nreturn Concatenate(uniqueRoadNames, \" & \");",
+            "name": "expr/street-name",
+            "returnType": "string",
+            "title": "Street Name"
+          },
+          {
+            "expression": "DomainName($feature, \"streetoverride\") == \"Yes\"",
+            "name": "expr",
+            "returnType": "boolean",
+            "title": "Street is Editable"
+          },
+          {
+            "expression": "var roadsItemID = \"9df2ddfa696a4271a749aac54d32814d\";\nvar bufferDistance = 10;\nvar bufferUnit = \"meter\";\n\n/*DO NOT CHANGE ANYTHING BELOW THIS LINE\n-------------------------------------------------------------------------*/\nvar arcgisPortal = Portal('https://www.arcgis.com');\n\n// Get all the intersecting roads within the buffer distance of the closure\nvar closureBuffer = Buffer($feature, bufferDistance, bufferUnit);\nvar intersectingRoads = Intersects(FeatureSetByPortalItem(arcgisPortal, roadsItemID, 0, [\"LABEL_LOCAL\", \"HWY1\"], true), closureBuffer);\n\n// Loop through the intersecting roads and test if the full road name is null or an empty string\n// If it is not null or empty and not already in the array add it to the array\nvar uniqueRoadNames = [];\nfor (var road in intersectingRoads) {\n\tvar roadName = road[\"LABEL_LOCAL\"];\n\tif (IsEmpty(roadName)) {\n\t\troadName = road[\"HWY1\"];\n\t}\n\tif (IsEmpty(roadName) || IndexOf(uniqueRoadNames, roadName) != -1) continue;\n\tPush(uniqueRoadNames, roadName);\n}\n\n// Return the road names concatenated with an ampersand between\nreturn Concatenate(uniqueRoadNames, \" & \");",
+            "name": "expr/living-atlas-street-name",
+            "returnType": "string",
+            "title": "Living Atlas Street Name"
+          }
+        ],
+        "title": "Blocks"
+      },
+      "showLabels": false,
+      "popupInfo": {
+        "popupElements": [
+          {
+            "type": "fields",
+            "description": "",
+            "fieldInfos": [
+              {
+                "fieldName": "reason",
+                "format": {
+                  "digitSeparator": true,
+                  "places": 0
+                },
+                "isEditable": true,
+                "label": "Reason",
+                "visible": true
+              },
+              {
+                "fieldName": "direction",
+                "format": {
+                  "digitSeparator": true,
+                  "places": 0
+                },
+                "isEditable": true,
+                "label": "Direction",
+                "visible": true
+              },
+              {
+                "fieldName": "description",
+                "isEditable": true,
+                "label": "Description",
+                "visible": true
+              },
+              {
+                "fieldName": "starttime",
+                "format": {
+                  "dateFormat": "longMonthDayYearShortTime",
+                  "digitSeparator": false
+                },
+                "isEditable": true,
+                "label": "Start Time",
+                "visible": true
+              },
+              {
+                "fieldName": "endtime",
+                "format": {
+                  "dateFormat": "longMonthDayYearShortTime",
+                  "digitSeparator": false
+                },
+                "isEditable": true,
+                "label": "End Time",
+                "visible": true
+              }
+            ],
+            "title": ""
+          },
+          {
+            "type": "fields",
+            "description": "",
+            "fieldInfos": [
+              {
+                "fieldName": "blockid",
+                "isEditable": true,
+                "label": "Block ID",
+                "visible": true
+              },
+              {
+                "fieldName": "accessallowed",
+                "format": {
+                  "digitSeparator": true,
+                  "places": 0
+                },
+                "isEditable": true,
+                "label": "Access Allowed",
+                "visible": true
+              },
+              {
+                "fieldName": "url",
+                "isEditable": true,
+                "label": "Block URL",
+                "visible": true
+              }
+            ],
+            "title": "Additional Details"
+          },
+          {
+            "type": "relationship",
+            "description": "",
+            "displayCount": 1,
+            "displayType": "list",
+            "orderByFields": [
+              {
+                "field": "starttime",
+                "order": "asc"
+              }
+            ],
+            "relationshipId": 0,
+            "title": "Closures"
+          }
+        ],
+        "relatedRecordsInfo": {
+          "showRelatedRecords": true,
+          "orderByFields": [
+            {
+              "field": "relationships/0/starttime",
+              "order": "asc"
+            }
+          ]
+        },
+        "fieldInfos": [
+          {
+            "fieldName": "OBJECTID",
+            "isEditable": false,
+            "label": "OBJECTID",
+            "visible": false
+          },
+          {
+            "fieldName": "blockid",
+            "isEditable": true,
+            "label": "Block ID",
+            "visible": true
+          },
+          {
+            "fieldName": "street",
+            "isEditable": true,
+            "label": "Street or Intersection",
+            "visible": false
+          },
+          {
+            "fieldName": "direction",
+            "format": {
+              "digitSeparator": true,
+              "places": 0
+            },
+            "isEditable": true,
+            "label": "Direction",
+            "visible": true
+          },
+          {
+            "fieldName": "reason",
+            "format": {
+              "digitSeparator": true,
+              "places": 0
+            },
+            "isEditable": true,
+            "label": "Reason",
+            "visible": true
+          },
+          {
+            "fieldName": "accessallowed",
+            "format": {
+              "digitSeparator": true,
+              "places": 0
+            },
+            "isEditable": true,
+            "label": "Access Allowed",
+            "visible": true
+          },
+          {
+            "fieldName": "description",
+            "isEditable": true,
+            "label": "Description",
+            "visible": true
+          },
+          {
+            "fieldName": "starttime",
+            "format": {
+              "dateFormat": "longMonthDayYearShortTime",
+              "digitSeparator": false
+            },
+            "isEditable": true,
+            "label": "Start Time",
+            "visible": true
+          },
+          {
+            "fieldName": "endtime",
+            "format": {
+              "dateFormat": "longMonthDayYearShortTime",
+              "digitSeparator": false
+            },
+            "isEditable": true,
+            "label": "End Time",
+            "visible": true
+          },
+          {
+            "fieldName": "url",
+            "isEditable": true,
+            "label": "Block URL",
+            "visible": true
+          },
+          {
+            "fieldName": "activeincid",
+            "isEditable": true,
+            "label": "Active Incident",
+            "visible": false
+          },
+          {
+            "fieldName": "streetoverride",
+            "isEditable": true,
+            "label": "Street Override",
+            "visible": false
+          },
+          {
+            "fieldName": "closureglobalid",
+            "isEditable": true,
+            "label": "Closure GlobalID",
+            "visible": false
+          },
+          {
+            "fieldName": "globalid",
+            "isEditable": false,
+            "label": "GlobalID",
+            "visible": false
+          },
+          {
+            "fieldName": "created_user",
+            "isEditable": false,
+            "label": "Created By",
+            "visible": false
+          },
+          {
+            "fieldName": "created_date",
+            "format": {
+              "dateFormat": "longMonthDayYear",
+              "digitSeparator": false
+            },
+            "isEditable": false,
+            "label": "Created On",
+            "visible": false
+          },
+          {
+            "fieldName": "last_edited_user",
+            "isEditable": false,
+            "label": "Last Edited By",
+            "visible": false
+          },
+          {
+            "fieldName": "last_edited_date",
+            "format": {
+              "dateFormat": "longMonthDayYear",
+              "digitSeparator": false
+            },
+            "isEditable": false,
+            "label": "Last Edited On",
+            "visible": false
+          }
+        ],
+        "showLastEditInfo": false,
+        "title": "Block: {street}"
+      }
+    }
+  ],
+  "baseMap": {
+    "baseMapLayers": [
+      {
+        "id": "VectorTile_1970",
+        "opacity": 1,
+        "title": "Light Gray Base",
+        "visibility": true,
+        "layerType": "VectorTileLayer",
+        "styleUrl": "https://cdn.arcgis.com/sharing/rest/content/items/291da5eab3a0412593b66d384379f89f/resources/styles/root.json"
+      },
+      {
+        "id": "VectorTile_7117",
+        "opacity": 1,
+        "title": "Light Gray Reference",
+        "visibility": true,
+        "layerType": "VectorTileLayer",
+        "styleUrl": "https://cdn.arcgis.com/sharing/rest/content/items/1768e8369a214dfab4e2167d5c5f2454/resources/styles/root.json",
+        "isReference": true
+      }
+    ],
+    "title": "Light Gray Canvas"
+  },
+  "authoringApp": "ArcGISMapViewer",
+  "authoringAppVersion": "2023.2",
+  "spatialReference": {
+    "latestWkid": 3857,
+    "wkid": 102100
+  },
+  "version": "2.28"
+}

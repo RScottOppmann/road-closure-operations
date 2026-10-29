@@ -1,0 +1,18 @@
+{
+  "kind": "arcgis-nova-deployable-app",
+  "version": "0.1",
+  "generatedAt": "2026-10-29T15:23:33.731Z",
+  "title": "Road Closure Operations",
+  "authMode": "oauth",
+  "entry": "index.html",
+  "sourceAppPath": "outputs/apps/2026-10-29T15-17-46-861c89b4-e665-4140-bd7d-3d2f89d2e989/index.html",
+  "files": {
+    "app": "app.json",
+    "map": "map.json",
+    "runtime": "app.js",
+    "auth": "standalone-auth.js"
+  },
+  "portalUrl": "https://www.arcgis.com",
+  "appId": "WxwzHftCT3Y5xrAk",
+  "deploymentUrl": "https://rscottoppmann.github.io/road-closure-operations/"
+}

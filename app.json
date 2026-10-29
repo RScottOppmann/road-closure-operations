@@ -1,0 +1,221 @@
+{
+  "version": "0.3",
+  "kind": "app",
+  "generatedAt": "2026-10-29T15:17:46.739Z",
+  "item": {
+    "title": "Road Closure Operations",
+    "subtitle": "Map and manage road closures in the community"
+  },
+  "map": {
+    "type": "webmap",
+    "path": "./map.json"
+  },
+  "app": {
+    "template": "nova-app",
+    "preset": "analysis",
+    "showHeader": true,
+    "theme": {
+      "mode": "light",
+      "accent": "coral"
+    },
+    "layout": {
+      "header": {
+        "hidden": false,
+        "collapsed": false,
+        "blocks": [
+          {
+            "type": "stat",
+            "id": "current-closure-count",
+            "title": "Current road closures",
+            "icon": "number",
+            "source": {
+              "layerId": "18a3d6d7cce-layer-4",
+              "where": "activeincid = 'Yes'",
+              "scope": "layer"
+            },
+            "statistic": "count",
+            "description": "Active closure records across the community.",
+            "autoPoll": true
+          },
+          {
+            "type": "customMount",
+            "id": "upcoming-closures-by-reason",
+            "title": "Active closures by reason",
+            "icon": "calendar"
+          }
+        ]
+      },
+      "left": {
+        "hidden": false,
+        "width": "420px",
+        "title": "Road Closures",
+        "collapsed": false,
+        "blocks": [
+          {
+            "type": "customMount",
+            "id": "closure-search-filter",
+            "title": "Find closures",
+            "icon": "magnifying-glass"
+          },
+          {
+            "type": "customMount",
+            "id": "closure-details",
+            "title": "Selected closure",
+            "icon": "information"
+          },
+          {
+            "type": "customMount",
+            "id": "closure-editor",
+            "title": "Edit closures",
+            "icon": "layers"
+          }
+        ]
+      }
+    },
+    "widgets": [
+      {
+        "id": "layer-list",
+        "type": "layerList",
+        "slot": "top-right",
+        "title": "Layers",
+        "config": {}
+      },
+      {
+        "id": "legend",
+        "type": "legend",
+        "slot": "bottom-left",
+        "title": "Legend",
+        "config": {}
+      },
+      {
+        "id": "home",
+        "type": "home",
+        "slot": "top-left",
+        "title": "Home",
+        "config": {}
+      },
+      {
+        "id": "scale-bar",
+        "type": "scaleBar",
+        "slot": "bottom-right",
+        "title": "Scale",
+        "config": {}
+      },
+      {
+        "id": "default-basemap-gallery",
+        "type": "basemapGallery",
+        "slot": "top-right",
+        "config": {}
+      }
+    ],
+    "interactions": [],
+    "behaviors": [
+      {
+        "id": "closure-details",
+        "label": "Show selected closure details",
+        "bundlePath": "./runtime/behaviors/closure-details-2ec40cf4d908e991.js",
+        "sourceSha256": "2ec40cf4d908e9918b3b5201c292816bba011ef0444802c7c88e8ae03142c42c",
+        "modulePaths": [],
+        "config": {
+          "layerId": "18a3d6d7cce-layer-4"
+        },
+        "mounts": [
+          "closure-details"
+        ],
+        "ownedLayerIds": [],
+        "interactions": [
+          {
+            "id": "closure-feature-click",
+            "trigger": {
+              "type": "feature-click",
+              "layerId": "18a3d6d7cce-layer-4"
+            },
+            "actionId": "show-closure-details"
+          }
+        ],
+        "installedAt": "2026-10-29T15:23:44.254Z"
+      },
+      {
+        "id": "closure-search-filter",
+        "label": "Search and filter road closures",
+        "bundlePath": "./runtime/behaviors/closure-search-filter-137db4db0e5ba2f4.js",
+        "sourceSha256": "137db4db0e5ba2f4455ff1a90f7f01e822e39fc25acb1674c6491fcffacc24e2",
+        "modulePaths": [
+          "esri/layers/support/FeatureFilter"
+        ],
+        "config": {
+          "layerId": "18a3d6d7cce-layer-4",
+          "roadField": "street",
+          "statusField": "activeincid",
+          "closureIdField": "closureid"
+        },
+        "mounts": [
+          "closure-search-filter"
+        ],
+        "ownedLayerIds": [],
+        "interactions": [],
+        "installedAt": "2026-10-29T15:25:09.739Z"
+      },
+      {
+        "id": "upcoming-closures-by-reason",
+        "label": "Summarize current and future closures by reason",
+        "bundlePath": "./runtime/behaviors/upcoming-closures-by-reason-73798039a356b6e4.js",
+        "sourceSha256": "73798039a356b6e4bb7e45c997a41a095dbdc19418fca883994078bb4b723166",
+        "modulePaths": [],
+        "config": {
+          "layerId": "18a3d6d7cce-layer-4",
+          "startDateField": "starttime",
+          "reasonField": "reason"
+        },
+        "mounts": [
+          "upcoming-closures-by-reason"
+        ],
+        "ownedLayerIds": [],
+        "interactions": [],
+        "installedAt": "2026-10-29T15:35:10.522Z"
+      },
+      {
+        "id": "closure-editor",
+        "label": "Edit road closures",
+        "bundlePath": "./runtime/behaviors/closure-editor-ab1d93bc13248cdf.js",
+        "sourceSha256": "ab1d93bc13248cdfd67bfb1a191f62793b6be28557b5d985caf238c19d25be63",
+        "modulePaths": [
+          "esri/widgets/Editor"
+        ],
+        "config": {
+          "layerId": "18a3d6d7cce-layer-4"
+        },
+        "mounts": [
+          "closure-editor"
+        ],
+        "ownedLayerIds": [],
+        "interactions": [],
+        "installedAt": "2026-10-29T15:37:01.995Z"
+      }
+    ]
+  },
+  "nova": {
+    "basename": "861c89b4-e665-4140-bd7d-3d2f89d2e989",
+    "presentationMode": "app",
+    "ownedGraphicsLayerIds": [],
+    "origin": {
+      "portalUrl": "https://www.arcgis.com",
+      "mapId": "output-909dc96d-8edc-4e76-a793-ece888dbcdbc",
+      "mapName": "Road Closures",
+      "viewMode": "2d",
+      "capturedAt": "2026-10-29T15:23:33.731Z",
+      "sourceItem": {
+        "itemId": "af22ac6047b14d6da5bf1c51d595b734",
+        "portalUrl": "https://www.arcgis.com"
+      }
+    },
+    "sourceSelection": {
+      "mode": "all"
+    },
+    "unsupportedLayers": [],
+    "degradedFeatures": [],
+    "notes": [
+      "Opened from portal item af22ac6047b14d6da5bf1c51d595b734 at https://www.arcgis.com/sharing/rest."
+    ]
+  }
+}
